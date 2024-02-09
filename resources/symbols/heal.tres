@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Symbol" load_steps=3 format=3 uid="uid://btgyh032xxao3"]
+
+[ext_resource type="Texture2D" uid="uid://bcq78msbrtw7b" path="res://art/using/heal.png" id="1_oj78g"]
+[ext_resource type="Script" path="res://resources/symbols/symbol.gd" id="2_tmkeh"]
+
+[resource]
+script = ExtResource("2_tmkeh")
+id = 2
+type = 2
+icon = ExtResource("1_oj78g")
+tooltip_text = ""

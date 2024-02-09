@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://bxw6tvhr3f3rv"]
+
+[ext_resource type="Script" path="res://resources/spells/spell.gd" id="1_gp3hy"]
+
+[resource]
+script = ExtResource("1_gp3hy")
+spell_name = "emergency_heal"
+description = "回复50% [color=green]最大生命[/color] 仅一次"
+reusable = false
+delay = false
+cost = 5

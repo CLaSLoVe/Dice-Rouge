@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://bavlhhi6smp2l"]
+
+[ext_resource type="Script" path="res://resources/skills/skill.gd" id="1_cydig"]
+[ext_resource type="Resource" uid="uid://blurlvmeu78v7" path="res://resources/symbols/attack.tres" id="2_7midi"]
+
+[resource]
+script = ExtResource("1_cydig")
+skill_name = "三连打击"
+prize = 10
+type = 0
+rely_on = 0
+bias = 0
+mag = 1.2
+times = 3
+target = 3
+discard_on = 0
+skill_comb = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_7midi"), ExtResource("2_7midi"), ExtResource("2_7midi")])
+skill_description = "造成1.2倍[img]art/using/strenth.png[/img]的[color=red]伤害[/color]3次"

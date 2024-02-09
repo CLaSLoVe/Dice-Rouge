@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Statu" load_steps=3 format=3 uid="uid://ki2tulcqb3kt"]
+
+[ext_resource type="Script" path="res://resources/status/statu.gd" id="1_ftoa2"]
+[ext_resource type="Texture2D" uid="uid://dho1md7it5mn7" path="res://art/using/heart.png" id="2_x7780"]
+
+[resource]
+script = ExtResource("1_ftoa2")
+statu_icon = ExtResource("2_x7780")
+statu_name = "生命"
+init_data = "120"
+color = Color(1, 0.298039, 0.380392, 1)

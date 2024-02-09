@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://wndbsawk1y3q"]
+
+[ext_resource type="Script" path="res://battle/magic/spell_ui.gd" id="1_i3ndx"]
+[ext_resource type="Texture2D" uid="uid://72tkecklov3c" path="res://art/using/magic.png" id="1_mitan"]
+[ext_resource type="Theme" uid="uid://dau5p77g7wf6n" path="res://theme.tres" id="2_bcvct"]
+[ext_resource type="Resource" uid="uid://dugenvu1f8b6k" path="res://resources/spells/block2attack.tres" id="2_m7b7g"]
+
+[node name="Spell" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1508.0
+offset_bottom = -1021.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i3ndx")
+spell = ExtResource("2_m7b7g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 400.0
+offset_bottom = 50.0
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_mitan")
+expand_mode = 2
+
+[node name="cost" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_bcvct")
+text = "x0"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+theme = ExtResource("2_bcvct")
+disabled = true
+alignment = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 6.0
+offset_right = 146.0
+offset_bottom = 46.0
+mouse_filter = 2
+theme = ExtResource("2_bcvct")
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

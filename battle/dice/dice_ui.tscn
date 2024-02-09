@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://sclepuh5aj0"]
+
+[ext_resource type="PackedScene" uid="uid://doxrbhpbhe8ch" path="res://battle/dice/mini_dice_ui.tscn" id="1_4vjt4"]
+[ext_resource type="Script" path="res://battle/dice/dice_ui.gd" id="1_gnk41"]
+[ext_resource type="Texture2D" uid="uid://ercc2dtw568h" path="res://art/icon/2/Skillicon2_09.png" id="2_o1clj"]
+[ext_resource type="Script" path="res://battle/dice/dice_state_machine/dice_state_machine.gd" id="4_8nri3"]
+[ext_resource type="Script" path="res://battle/dice/dice_state_machine/dice_base_state.gd" id="5_2anol"]
+[ext_resource type="Script" path="res://battle/dice/dice_state_machine/dice_dragging_state.gd" id="6_w2gsa"]
+[ext_resource type="Script" path="res://battle/dice/dice_state_machine/dice_released_state.gd" id="7_qcx8g"]
+[ext_resource type="AudioStream" uid="uid://jlmy78c5r8ar" path="res://art/sfx/WAV/MI_SFX 25.wav" id="8_mxjd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t7ny"]
+size = Vector2(123, 120)
+
+[node name="DiceUI3" type="Control"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 120.0
+pivot_offset = Vector2(0, 82.97)
+mouse_filter = 1
+script = ExtResource("1_gnk41")
+
+[node name="MiniDiceUI" parent="." instance=ExtResource("1_4vjt4")]
+offset_left = -1.0
+offset_top = -83.0
+offset_right = -1.0
+offset_bottom = -83.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 121.0
+offset_bottom = 119.0
+mouse_filter = 2
+color = Color(0.00392157, 0, 0.207843, 1)
+
+[node name="Symbol" type="Sprite2D" parent="."]
+position = Vector2(60, 59)
+scale = Vector2(3, 3)
+texture = ExtResource("2_o1clj")
+
+[node name="DropPointDetector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
+position = Vector2(60.5, 60)
+shape = SubResource("RectangleShape2D_1t7ny")
+
+[node name="DiceStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_8nri3")
+initial_state = NodePath("DiceBaseState")
+
+[node name="DiceBaseState" type="Node" parent="DiceStateMachine"]
+script = ExtResource("5_2anol")
+
+[node name="DiceDraggingState" type="Node" parent="DiceStateMachine"]
+script = ExtResource("6_w2gsa")
+state = 2
+
+[node name="DiceReleasedState" type="Node" parent="DiceStateMachine"]
+script = ExtResource("7_qcx8g")
+state = 3
+
+[node name="PutSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_mxjd7")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]
+[connection signal="mouse_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_mouse_entered"]
+[connection signal="mouse_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_mouse_exited"]

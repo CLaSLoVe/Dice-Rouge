@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=5 format=3 uid="uid://csh1k72oe31pm"]
+
+[ext_resource type="Resource" uid="uid://bq5l10djqukxc" path="res://resources/buffs/enhance.tres" id="1_5bxvt"]
+[ext_resource type="Script" path="res://resources/skills/skill.gd" id="2_n4odk"]
+[ext_resource type="Resource" uid="uid://qpucgdjwc5bc" path="res://resources/symbols/block.tres" id="3_5a5oe"]
+[ext_resource type="Resource" uid="uid://blurlvmeu78v7" path="res://resources/symbols/attack.tres" id="4_0pd24"]
+
+[resource]
+script = ExtResource("2_n4odk")
+skill_name = "代替强化"
+prize = 10
+type = 4
+rely_on = 4
+bias = 0
+mag = 0.15
+times = 1
+target = 0
+discard_on = 0
+skill_comb = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("3_5a5oe"), ExtResource("4_0pd24")])
+related_buff = ExtResource("1_5bxvt")
+skill_description = "进行2回合15%[img]art/using/strenth.png[/img]的[color=yellow]强化[/color]"

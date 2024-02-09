@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://doxrbhpbhe8ch"]
+
+[ext_resource type="Texture2D" uid="uid://cr5jelochp1h8" path="res://art/icon/4/Skillicon4_09.png" id="1_db2h1"]
+
+[node name="MiniDiceUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panels" type="Node2D" parent="."]
+
+[node name="s1" type="Panel" parent="Panels"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="s2" type="Panel" parent="Panels"]
+offset_left = 41.0
+offset_right = 81.0
+offset_bottom = 40.0
+
+[node name="s3" type="Panel" parent="Panels"]
+offset_left = 82.0
+offset_right = 122.0
+offset_bottom = 40.0
+
+[node name="s4" type="Panel" parent="Panels"]
+offset_left = 82.0
+offset_top = 41.0
+offset_right = 122.0
+offset_bottom = 81.0
+
+[node name="s5" type="Panel" parent="Panels"]
+offset_left = 41.0
+offset_top = 41.0
+offset_right = 81.0
+offset_bottom = 81.0
+
+[node name="s6" type="Panel" parent="Panels"]
+offset_top = 41.0
+offset_right = 40.0
+offset_bottom = 81.0
+
+[node name="Symbols" type="Node2D" parent="."]
+
+[node name="s1" type="Sprite2D" parent="Symbols"]
+position = Vector2(20, 20)
+texture = ExtResource("1_db2h1")
+
+[node name="s2" type="Sprite2D" parent="Symbols"]
+position = Vector2(61, 20)
+texture = ExtResource("1_db2h1")
+
+[node name="s3" type="Sprite2D" parent="Symbols"]
+position = Vector2(102, 20)
+texture = ExtResource("1_db2h1")
+
+[node name="s4" type="Sprite2D" parent="Symbols"]
+position = Vector2(102, 61)
+texture = ExtResource("1_db2h1")
+
+[node name="s5" type="Sprite2D" parent="Symbols"]
+position = Vector2(61, 61)
+texture = ExtResource("1_db2h1")
+
+[node name="s6" type="Sprite2D" parent="Symbols"]
+position = Vector2(20, 61)
+texture = ExtResource("1_db2h1")

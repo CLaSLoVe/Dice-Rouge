@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Symbol" load_steps=3 format=3 uid="uid://13u35q6ixlxp"]
+
+[ext_resource type="Texture2D" uid="uid://b7js6jw42k6lp" path="res://art/using/blank.png" id="1_cpjod"]
+[ext_resource type="Script" path="res://resources/symbols/symbol.gd" id="2_chq1h"]
+
+[resource]
+script = ExtResource("2_chq1h")
+id = 6
+type = 6
+icon = ExtResource("1_cpjod")
+tooltip_text = ""

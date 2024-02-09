@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://dugenvu1f8b6k"]
+
+[ext_resource type="Script" path="res://resources/spells/spell.gd" id="1_8f04v"]
+
+[resource]
+script = ExtResource("1_8f04v")
+spell_name = "block2attack"
+description = "造成 [color=skyblue]格挡[/color] 的[color=red]伤害[/color]"
+reusable = true
+delay = false
+cost = 2

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemySkill" load_steps=4 format=3 uid="uid://f38lkmcsjkl5"]
+
+[ext_resource type="Texture2D" uid="uid://cokgrrc5y6w2i" path="res://art/icon/11/Skillicon11_20.png" id="1_ekhie"]
+[ext_resource type="Resource" uid="uid://c1jlyenogtokg" path="res://resources/buffs/weak.tres" id="1_nivma"]
+[ext_resource type="Script" path="res://resources/skills/enemy_skill/enemy_skill.gd" id="1_x6tiv"]
+
+[resource]
+script = ExtResource("1_x6tiv")
+skill_name = "weak"
+icon = ExtResource("1_ekhie")
+value = -2
+type = 3
+mag = 1.0
+variance = 0.2
+times = 1
+target = 0
+discard_on = 1
+related_buff = ExtResource("1_nivma")
+skill_description = ""

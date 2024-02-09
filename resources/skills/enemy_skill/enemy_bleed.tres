@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemySkill" load_steps=4 format=3 uid="uid://dvid85y2nnwoq"]
+
+[ext_resource type="Texture2D" uid="uid://cokgrrc5y6w2i" path="res://art/icon/11/Skillicon11_20.png" id="1_3ckol"]
+[ext_resource type="Resource" uid="uid://bcbespvxbbkdc" path="res://resources/buffs/bleed.tres" id="1_k8ntv"]
+[ext_resource type="Script" path="res://resources/skills/enemy_skill/enemy_skill.gd" id="2_i27t5"]
+
+[resource]
+script = ExtResource("2_i27t5")
+skill_name = "bleed"
+icon = ExtResource("1_3ckol")
+value = -3
+type = 7
+mag = 1.0
+variance = 0.2
+times = 1
+target = 0
+discard_on = 1
+related_buff = ExtResource("1_k8ntv")
+skill_description = ""

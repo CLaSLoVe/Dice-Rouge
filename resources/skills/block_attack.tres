@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://brjyeqycrr6al"]
+
+[ext_resource type="Script" path="res://resources/skills/skill.gd" id="1_5hev4"]
+[ext_resource type="Resource" uid="uid://qpucgdjwc5bc" path="res://resources/symbols/block.tres" id="2_ni781"]
+
+[resource]
+script = ExtResource("1_5hev4")
+skill_name = "转守为攻"
+prize = 10
+type = 0
+rely_on = 3
+bias = 0
+mag = 2.0
+times = 1
+target = 3
+discard_on = 0
+skill_comb = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_ni781"), ExtResource("2_ni781")])
+skill_description = "造成2倍[img]art/using/defence.png[/img]的[color=red]伤害[/color]"

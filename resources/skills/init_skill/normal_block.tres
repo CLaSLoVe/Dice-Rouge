@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://cos3p4mka8wub"]
+
+[ext_resource type="Script" path="res://resources/skills/skill.gd" id="1_n2dtj"]
+[ext_resource type="Resource" uid="uid://qpucgdjwc5bc" path="res://resources/symbols/block.tres" id="2_v6v1y"]
+
+[resource]
+script = ExtResource("1_n2dtj")
+skill_name = "普通格挡"
+type = 1
+rely_on = 3
+bias = 0
+mag = 1.0
+times = 1
+target = 0
+discard_on = 0
+skill_comb = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_v6v1y")])
+skill_description = "进行[img]art/using/defence.png[/img]的[color=blue]格挡[/color]"

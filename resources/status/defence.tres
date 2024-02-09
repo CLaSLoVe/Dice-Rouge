@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Statu" load_steps=3 format=3 uid="uid://b3ufjypoec2um"]
+
+[ext_resource type="Script" path="res://resources/status/statu.gd" id="1_brr51"]
+[ext_resource type="Texture2D" uid="uid://bfnokqe8fgkuc" path="res://art/using/defence.png" id="2_43o36"]
+
+[resource]
+script = ExtResource("1_brr51")
+statu_icon = ExtResource("2_43o36")
+statu_name = "防御"
+init_data = "5"
+color = Color(0, 1, 1, 1)

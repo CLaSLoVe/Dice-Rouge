@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Statu" load_steps=3 format=3 uid="uid://b0gqlm1ysoypw"]
+
+[ext_resource type="Script" path="res://resources/status/statu.gd" id="1_hun3v"]
+[ext_resource type="Texture2D" uid="uid://72tkecklov3c" path="res://art/using/magic.png" id="2_a4v21"]
+
+[resource]
+script = ExtResource("1_hun3v")
+statu_icon = ExtResource("2_a4v21")
+statu_name = "法力"
+init_data = "0"
+color = Color(0.639216, 0.415686, 1, 1)

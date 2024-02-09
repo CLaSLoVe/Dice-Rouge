@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemySkill" load_steps=3 format=3 uid="uid://2g0ty788s0ci"]
+
+[ext_resource type="Script" path="res://resources/skills/enemy_skill/enemy_skill.gd" id="1_672pv"]
+[ext_resource type="Texture2D" uid="uid://ddvmhh6osywro" path="res://art/using/attack.png" id="1_ytyxs"]
+
+[resource]
+script = ExtResource("1_672pv")
+skill_name = "attack"
+icon = ExtResource("1_ytyxs")
+type = 0
+mag = 1.0
+variance = 0.2
+times = 1
+target = 0
+discard_on = 0
+skill_description = ""

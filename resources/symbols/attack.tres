@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Symbol" load_steps=3 format=3 uid="uid://blurlvmeu78v7"]
+
+[ext_resource type="Texture2D" uid="uid://ddvmhh6osywro" path="res://art/using/attack.png" id="1_247c3"]
+[ext_resource type="Script" path="res://resources/symbols/symbol.gd" id="1_nscab"]
+
+[resource]
+script = ExtResource("1_nscab")
+id = 0
+type = 0
+icon = ExtResource("1_247c3")
+tooltip_text = ""

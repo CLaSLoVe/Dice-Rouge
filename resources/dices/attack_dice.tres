@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Dice" load_steps=3 format=3 uid="uid://b2j36ixne0ihi"]
+
+[ext_resource type="Script" path="res://resources/dices/dice.gd" id="1_d8e5c"]
+[ext_resource type="Resource" uid="uid://blurlvmeu78v7" path="res://resources/symbols/attack.tres" id="2_g3thl"]
+
+[resource]
+script = ExtResource("1_d8e5c")
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_g3thl"), ExtResource("2_g3thl"), ExtResource("2_g3thl"), ExtResource("2_g3thl"), ExtResource("2_g3thl"), ExtResource("2_g3thl")])

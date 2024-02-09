@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://ccey0h6np3qxs"]
+
+[ext_resource type="Script" path="res://resources/skills/skill.gd" id="1_o85h5"]
+[ext_resource type="Resource" uid="uid://qpucgdjwc5bc" path="res://resources/symbols/block.tres" id="2_5ljr6"]
+
+[resource]
+script = ExtResource("1_o85h5")
+skill_name = "加强格挡"
+prize = 10
+type = 1
+rely_on = 3
+bias = 0
+mag = 2.5
+times = 1
+target = 0
+discard_on = 0
+skill_comb = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_5ljr6"), ExtResource("2_5ljr6")])
+skill_description = "进行 2.5倍[img]art/using/defence.png[/img]的[color=blue]格挡[/color]"

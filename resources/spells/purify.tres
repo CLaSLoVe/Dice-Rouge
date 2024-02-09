@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://cbnnt6xhk8r7"]
+
+[ext_resource type="Script" path="res://resources/spells/spell.gd" id="1_ksdq8"]
+
+[resource]
+script = ExtResource("1_ksdq8")
+spell_name = "purify"
+description = "净化 所有减益效果"
+reusable = true
+delay = false
+cost = 4

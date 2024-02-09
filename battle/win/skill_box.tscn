@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://bax5te8r3ku81"]
+
+[ext_resource type="TileSet" uid="uid://bdnbatw8to8ft" path="res://tiles/scenes.tres" id="1_88kgl"]
+[ext_resource type="Script" path="res://battle/win/skill_box.gd" id="1_aeu6k"]
+[ext_resource type="Theme" uid="uid://dau5p77g7wf6n" path="res://theme.tres" id="4_0u5op"]
+
+[node name="SkillBox" type="VBoxContainer"]
+offset_right = 424.0
+offset_bottom = 167.0
+script = ExtResource("1_aeu6k")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-19, -7)
+scale = Vector2(2.2, 2.2)
+tile_set = ExtResource("1_88kgl")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 2949122, 4, 12, 3080194, 4, 65536, 2949122, 5, 131072, 2949122, 5, 196608, 2949122, 6, 1, 3014658, 4, 2, 3014658, 4, 3, 3014658, 4, 4, 3014658, 4, 5, 3014658, 4, 6, 3014658, 4, 7, 3014658, 4, 8, 3014658, 4, 9, 3014658, 4, 10, 3014658, 4, 11, 3014658, 4, 65548, 3080194, 5, 131084, 3080194, 5, 196620, 3080194, 6, 65537, 3014658, 5, 131073, 3014658, 5, 196609, 3014658, 6, 65538, 3014658, 5, 131074, 3014658, 5, 196610, 3014658, 6, 65539, 3014658, 5, 131075, 3014658, 5, 196611, 3014658, 6, 65540, 3014658, 5, 131076, 3014658, 5, 196612, 3014658, 6, 65541, 3014658, 5, 131077, 3014658, 5, 196613, 3014658, 6, 65542, 3014658, 5, 131078, 3014658, 5, 196614, 3014658, 6, 65543, 3014658, 5, 131079, 3014658, 5, 196615, 3014658, 6, 65544, 3014658, 5, 131080, 3014658, 5, 196616, 3014658, 6, 65545, 3014658, 5, 131081, 3014658, 5, 196617, 3014658, 6, 65546, 3014658, 5, 131082, 3014658, 5, 196618, 3014658, 6, 65547, 3014658, 5, 131083, 3014658, 5, 196619, 3014658, 6)
+
+[node name="box" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 2
+
+[node name="hbc" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="hbc"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("4_0u5op")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="hbc"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_0u5op")
+text = "15   "
+alignment = 2
+
+[node name="Label2" type="RichTextLabel" parent="hbc"]
+custom_minimum_size = Vector2(155, 0)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("4_0u5op")
+bbcode_enabled = true
+autowrap_mode = 0
+
+[node name="TileMap2" type="TileMap" parent="."]
+position = Vector2(206, 129)
+scale = Vector2(2, 2)
+tile_set = ExtResource("1_88kgl")
+format = 2
+layer_0/tile_data = PackedInt32Array(65535, 2686978, 13)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("4_0u5op")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+autowrap_mode = 0
+
+[connection signal="pressed" from="hbc/Button" to="." method="_on_button_pressed"]

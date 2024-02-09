@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Statu" load_steps=3 format=3 uid="uid://c3goirmhqs4ck"]
+
+[ext_resource type="Script" path="res://resources/status/statu.gd" id="1_lj0vl"]
+[ext_resource type="Texture2D" uid="uid://bvomw6xl24jpg" path="res://art/using/medical.png" id="2_1ru10"]
+
+[resource]
+script = ExtResource("1_lj0vl")
+statu_icon = ExtResource("2_1ru10")
+statu_name = "治愈"
+init_data = "3"
+color = Color(0, 1, 0, 1)
