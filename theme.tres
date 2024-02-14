@@ -1,6 +1,0 @@
-[gd_resource type="Theme" format=3 uid="uid://dau5p77g7wf6n"]
-
-[resource]
-default_font_size = 25
-/colors/skills = Color(0, 0, 0, 1)
-/constants/skill = 0
