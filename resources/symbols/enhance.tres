@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Symbol" load_steps=3 format=3 uid="uid://0ds4tfk4snhc"]
+
+[ext_resource type="Texture2D" uid="uid://bdmpm4foxgtci" path="res://Art/Picture/symbols/enhance.png" id="1_edryg"]
+[ext_resource type="Script" path="res://resources/symbols/symbol.gd" id="2_cg2sn"]
+
+[resource]
+script = ExtResource("2_cg2sn")
+type = 4
+icon = ExtResource("1_edryg")
+tooltip_text = "强化"

@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://dsidu34ksao2b"]
+
+[ext_resource type="Texture2D" uid="uid://cy0d4ywx3clai" path="res://Art/Picture/buff/skill_icons1.png" id="1_btuwe"]
+[ext_resource type="Script" path="res://battle/buff_icon.gd" id="1_hwmoc"]
+[ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="2_1pyvi"]
+[ext_resource type="Texture2D" uid="uid://brykap45b6jqj" path="res://Art/Picture/buff_box/104.png" id="4_7spqc"]
+[ext_resource type="Texture2D" uid="uid://e0s88h55jmgp" path="res://Art/Picture/buff_box/139.png" id="5_plb41"]
+
+[sub_resource type="Animation" id="Animation_u3xic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("poison:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bleed:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vhma1"]
+resource_name = "bleed"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bleed:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_hg1ch"]
+resource_name = "poison"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("poison:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_renqi"]
+_data = {
+"RESET": SubResource("Animation_u3xic"),
+"bleed": SubResource("Animation_vhma1"),
+"poison": SubResource("Animation_hg1ch")
+}
+
+[node name="BuffIcon" type="Control"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 35.0
+offset_bottom = 35.0
+script = ExtResource("1_hwmoc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+offset_right = 35.0
+offset_bottom = 35.0
+texture = ExtResource("1_btuwe")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 23.0
+offset_top = 16.0
+offset_right = 55.0
+offset_bottom = 51.0
+theme = ExtResource("2_1pyvi")
+theme_override_font_sizes/font_size = 25
+text = "3"
+
+[node name="poison" type="Sprite2D" parent="."]
+position = Vector2(19, 10)
+scale = Vector2(2.21875, 2.21875)
+texture = ExtResource("4_7spqc")
+hframes = 8
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_renqi")
+}
+
+[node name="bleed" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(18, 19)
+scale = Vector2(2.03125, 2.03125)
+texture = ExtResource("5_plb41")
+hframes = 8
+vframes = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

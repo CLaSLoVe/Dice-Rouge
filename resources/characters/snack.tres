@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://m4ax4ia14tnd"]
+
+[ext_resource type="Resource" uid="uid://ds1dy0l6l3j2b" path="res://resources/effects/single_attack.tres" id="1_0trd7"]
+[ext_resource type="AudioStream" uid="uid://d0667tkaefrvu" path="res://Art/sfx/07_human_atk_sword_1.wav" id="1_wul3v"]
+[ext_resource type="AudioStream" uid="uid://7n7orqjpdxxr" path="res://Art/sfx/39_Block_03.wav" id="2_8sh6t"]
+[ext_resource type="Texture2D" uid="uid://drvd3uo4hmdj4" path="res://Art/Picture/player/snack.png" id="3_1svd5"]
+[ext_resource type="Resource" uid="uid://bnuctxta2vrk3" path="res://resources/effects/poison.tres" id="3_tw32n"]
+[ext_resource type="Script" path="res://resources/characters/character.gd" id="4_bv7ad"]
+[ext_resource type="Resource" uid="uid://dq6xfl58i37on" path="res://resources/effects/heal.tres" id="5_20i4u"]
+
+[resource]
+script = ExtResource("4_bv7ad")
+char_name = "毒蛇"
+is_player = false
+alive = true
+size = 100
+icon = ExtResource("3_1svd5")
+selectable = true
+init_damage_per_turn = 0
+stun_immune = false
+mimic = false
+invincible_with_pal = false
+make_bleed = false
+make_poison = true
+enemy_skills = Array[Resource("res://resources/effects/effect.gd")]([ExtResource("1_0trd7"), ExtResource("3_tw32n"), ExtResource("5_20i4u")])
+p_array = Array[int]([3, 3, 1])
+attack_audios = Array[AudioStreamWAV]([ExtResource("1_wul3v")])
+block_audios = Array[AudioStreamWAV]([ExtResource("2_8sh6t")])
+enhance_audios = Array[AudioStreamWAV]([])
+heal_audios = Array[AudioStreamWAV]([])
+damage_audios = Array[AudioStreamWAV]([])
+hex_audios = Array[AudioStreamWAV]([])

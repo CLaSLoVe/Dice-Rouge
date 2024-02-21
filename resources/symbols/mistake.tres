@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Symbol" load_steps=3 format=3 uid="uid://luok4x4p1f2f"]
+
+[ext_resource type="Texture2D" uid="uid://kaj58sf02s6k" path="res://Art/Picture/symbols/mistake.png" id="1_abgel"]
+[ext_resource type="Script" path="res://resources/symbols/symbol.gd" id="2_gnx7c"]
+
+[resource]
+script = ExtResource("2_gnx7c")
+type = 5
+icon = ExtResource("1_abgel")
+tooltip_text = "立即受到伤害"

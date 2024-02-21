@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3r3me08iidny"
+path="res://.godot/imported/water.wav-713bf07e26348a55e15f32d093e4cf03.sample"
+
+[deps]
+
+source_file="res://Art/sfx/RPG Voice Starter Pack/Type 3/water.wav"
+dest_files=["res://.godot/imported/water.wav-713bf07e26348a55e15f32d093e4cf03.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

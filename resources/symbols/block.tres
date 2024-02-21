@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Symbol" load_steps=3 format=3 uid="uid://b6qj7ufldsdgj"]
+
+[ext_resource type="Texture2D" uid="uid://cnt5e13ps4kim" path="res://Art/Picture/symbols/block.png" id="1_q6f8s"]
+[ext_resource type="Script" path="res://resources/symbols/symbol.gd" id="2_iwsmj"]
+
+[resource]
+script = ExtResource("2_iwsmj")
+type = 1
+icon = ExtResource("1_q6f8s")
+tooltip_text = "格挡"

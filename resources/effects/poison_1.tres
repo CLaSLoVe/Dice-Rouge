@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=6 format=3 uid="uid://bgwystmpebhns"]
+
+[ext_resource type="Resource" uid="uid://kbf2opn20urh" path="res://resources/buffs/poison.tres" id="1_2duua"]
+[ext_resource type="Texture2D" uid="uid://q2pj8jccrrbq" path="res://Art/Picture/symbols/spell.png" id="2_ro6mn"]
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="3_g0q43"]
+[ext_resource type="Resource" uid="uid://ccdti3nf7e31l" path="res://resources/symbols/attack.tres" id="4_5wvxs"]
+[ext_resource type="Resource" uid="uid://b6qj7ufldsdgj" path="res://resources/symbols/block.tres" id="5_o642j"]
+
+[resource]
+script = ExtResource("3_g0q43")
+text = "下毒"
+type = 4
+tooltip = "施加[color=yellow]中毒[/color]效果&层"
+icon = ExtResource("2_ro6mn")
+base_target = 0
+base_statu = 0
+to_target = 1
+to_statu = 0
+times = 1
+magnitude = 1.0
+bias = 0
+countdown = 2
+on_turn = true
+buff = ExtResource("1_2duua")
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("4_5wvxs"), ExtResource("5_o642j")])

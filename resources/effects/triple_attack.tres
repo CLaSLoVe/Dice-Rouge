@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=4 format=3 uid="uid://b00birchuw2ix"]
+
+[ext_resource type="Texture2D" uid="uid://b5vhg15hrwryl" path="res://Art/Picture/symbols/attack.png" id="1_aw8kn"]
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="1_rewki"]
+[ext_resource type="Resource" uid="uid://ccdti3nf7e31l" path="res://resources/symbols/attack.tres" id="2_tak3c"]
+
+[resource]
+script = ExtResource("1_rewki")
+text = "连续攻击"
+type = 0
+tooltip = "造成[color=yellow]力量[/color]?的伤害T次"
+icon = ExtResource("1_aw8kn")
+base_target = 0
+base_statu = 1
+to_target = 1
+to_statu = 0
+times = 4
+magnitude = 1.0
+bias = 0
+countdown = -1
+on_turn = true
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_tak3c"), ExtResource("2_tak3c"), ExtResource("2_tak3c")])

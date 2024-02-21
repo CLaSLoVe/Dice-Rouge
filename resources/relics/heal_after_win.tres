@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Relic" load_steps=3 format=3 uid="uid://ddtyecl0wujgd"]
+
+[ext_resource type="Texture2D" uid="uid://co57lxa27iwnx" path="res://Art/Picture/Spells/healing_spell.png" id="1_dbuht"]
+[ext_resource type="Script" path="res://resources/relics/relic.gd" id="2_rte78"]
+
+[resource]
+script = ExtResource("2_rte78")
+text = "heal_after_win"
+icon = ExtResource("1_dbuht")
+data_array = Array[int]([6])
+tooltip_text = "战斗胜利后获得&点[color=green]回复"

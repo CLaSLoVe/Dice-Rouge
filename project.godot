@@ -11,5 +11,43 @@ config_version=5
 [application]
 
 config/name="Dice 3"
+run/main_scene="res://battle/battle.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Funcs="*res://global/funcs.gd"
+Event="*res://global/event.gd"
+Actions="*res://global/actions.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+mouse_cursor/custom_image="res://Art/1 cursor.png"
+mouse_cursor/custom_image_hotspot=Vector2(10, 10)
+mouse_cursor/tooltip_position_offset=Vector2(20, 0)
+
+[gui]
+
+timers/tooltip_delay_sec=0.2
+
+[input]
+
+left_mouse={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+right_mouse={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(197, 8),"global_position":Vector2(201, 49),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

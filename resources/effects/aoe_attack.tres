@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=4 format=3 uid="uid://bwkaqkc5y1pvt"]
+
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="1_3w4ie"]
+[ext_resource type="Texture2D" uid="uid://b5vhg15hrwryl" path="res://Art/Picture/symbols/attack.png" id="1_22sms"]
+[ext_resource type="Resource" uid="uid://ccdti3nf7e31l" path="res://resources/symbols/attack.tres" id="2_bdsdn"]
+
+[resource]
+script = ExtResource("1_3w4ie")
+text = "横扫攻击"
+type = 0
+tooltip = "造成[color=yellow]力量[/color]?的伤害"
+icon = ExtResource("1_22sms")
+base_target = 0
+base_statu = 1
+to_target = 2
+to_statu = 0
+times = 1
+magnitude = 1.0
+bias = 0
+countdown = -1
+on_turn = true
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_bdsdn"), ExtResource("2_bdsdn")])

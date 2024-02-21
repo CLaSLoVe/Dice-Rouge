@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Character" load_steps=19 format=3 uid="uid://bgkwcf5d0sw7u"]
+
+[ext_resource type="Script" path="res://resources/characters/character.gd" id="1_7ymal"]
+[ext_resource type="Texture2D" uid="uid://colcicqk3fy0s" path="res://Art/Picture/player/girl.png" id="1_ceg1a"]
+[ext_resource type="AudioStream" uid="uid://3y4yirkvoytx" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack1.wav" id="1_x0df8"]
+[ext_resource type="AudioStream" uid="uid://c4aoyv8xr8fww" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack2.wav" id="2_khlnw"]
+[ext_resource type="AudioStream" uid="uid://dcf2skgbx6ljc" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack3.wav" id="3_7r6sv"]
+[ext_resource type="AudioStream" uid="uid://7n7orqjpdxxr" path="res://Art/sfx/39_Block_03.wav" id="4_3tgi5"]
+[ext_resource type="AudioStream" uid="uid://cqm8lq4ttg1us" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged1.wav" id="4_5sg4v"]
+[ext_resource type="AudioStream" uid="uid://d2lbxjnk3pad3" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged2.wav" id="5_h4g3t"]
+[ext_resource type="AudioStream" uid="uid://dxcrgx5bj047y" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged3.wav" id="6_ap216"]
+[ext_resource type="Resource" uid="uid://ds1dy0l6l3j2b" path="res://resources/effects/single_attack.tres" id="7_87taf"]
+[ext_resource type="Resource" uid="uid://brnva33xleyq7" path="res://resources/effects/block.tres" id="8_rs1i8"]
+[ext_resource type="AudioStream" uid="uid://ba73fy0dhfoj6" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump1.wav" id="9_bjoxy"]
+[ext_resource type="AudioStream" uid="uid://cqat8h7fonm7c" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump2.wav" id="10_v7s5d"]
+[ext_resource type="AudioStream" uid="uid://ceyffvh8y2qh3" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump3.wav" id="11_1egri"]
+[ext_resource type="AudioStream" uid="uid://biddoes5xoko" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed1.wav" id="12_xkhvl"]
+[ext_resource type="AudioStream" uid="uid://dmrwpob87ogo4" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed2.wav" id="13_eaikf"]
+[ext_resource type="AudioStream" uid="uid://b6nv8deg0v1yf" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed3.wav" id="14_wubna"]
+[ext_resource type="AudioStream" uid="uid://cddimsrita5dh" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/hex.wav" id="15_arkhf"]
+
+[resource]
+script = ExtResource("1_7ymal")
+char_name = "你"
+is_player = true
+alive = true
+size = 300
+icon = ExtResource("1_ceg1a")
+selectable = false
+init_damage_per_turn = 0
+stun_immune = false
+mimic = false
+invincible_with_pal = false
+make_bleed = false
+make_poison = false
+enemy_skills = Array[Resource("res://resources/effects/effect.gd")]([ExtResource("7_87taf"), ExtResource("8_rs1i8")])
+p_array = Array[int]([7, 3])
+attack_audios = Array[AudioStreamWAV]([ExtResource("1_x0df8"), ExtResource("2_khlnw"), ExtResource("3_7r6sv")])
+block_audios = Array[AudioStreamWAV]([ExtResource("4_3tgi5")])
+enhance_audios = Array[AudioStreamWAV]([ExtResource("9_bjoxy"), ExtResource("10_v7s5d"), ExtResource("11_1egri")])
+heal_audios = Array[AudioStreamWAV]([ExtResource("12_xkhvl"), ExtResource("13_eaikf"), ExtResource("14_wubna")])
+damage_audios = Array[AudioStreamWAV]([ExtResource("4_5sg4v"), ExtResource("5_h4g3t"), ExtResource("6_ap216")])
+hex_audios = Array[AudioStreamWAV]([ExtResource("15_arkhf")])

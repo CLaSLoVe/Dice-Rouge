@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://g22mlodcht3w"]
+
+[ext_resource type="Resource" uid="uid://brnva33xleyq7" path="res://resources/effects/block.tres" id="2_apo2q"]
+[ext_resource type="Resource" uid="uid://b00birchuw2ix" path="res://resources/effects/triple_attack.tres" id="3_4v1pa"]
+[ext_resource type="Resource" uid="uid://dopyxhpq3neo7" path="res://resources/effects/stun.tres" id="3_sp2q7"]
+[ext_resource type="Texture2D" uid="uid://rdkyl62dhwjy" path="res://Art/Picture/player/bird.png" id="3_xq57p"]
+[ext_resource type="Script" path="res://resources/characters/character.gd" id="4_ldr1y"]
+
+[resource]
+script = ExtResource("4_ldr1y")
+char_name = "小鸟"
+is_player = false
+alive = true
+size = 100
+icon = ExtResource("3_xq57p")
+selectable = true
+init_damage_per_turn = 0
+stun_immune = false
+mimic = false
+invincible_with_pal = false
+make_bleed = false
+make_poison = false
+enemy_skills = Array[Resource("res://resources/effects/effect.gd")]([ExtResource("3_4v1pa"), ExtResource("2_apo2q"), ExtResource("3_sp2q7")])
+p_array = Array[int]([3, 2, 3])
+attack_audios = Array[AudioStreamWAV]([])
+block_audios = Array[AudioStreamWAV]([])
+enhance_audios = Array[AudioStreamWAV]([])
+heal_audios = Array[AudioStreamWAV]([])
+damage_audios = Array[AudioStreamWAV]([])
+hex_audios = Array[AudioStreamWAV]([])

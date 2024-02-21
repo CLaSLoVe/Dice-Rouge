@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://coigdkr8s3s7p"]
+
+[ext_resource type="Texture2D" uid="uid://ciyw7pw3hkwe0" path="res://Art/Picture/Spells/blinding_light_spell.png" id="1_agw4h"]
+[ext_resource type="Script" path="res://battle/relic_box.gd" id="1_mmpqv"]
+[ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="2_g4xy8"]
+[ext_resource type="Texture2D" uid="uid://cux47ji0owhtb" path="res://Art/Picture/relic/130.png" id="4_74b58"]
+
+[sub_resource type="Animation" id="Animation_d6w26"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("active:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_uiqmp"]
+resource_name = "active"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("active:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_37axe"]
+_data = {
+"RESET": SubResource("Animation_d6w26"),
+"active": SubResource("Animation_uiqmp")
+}
+
+[node name="Relic" type="Control"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1848.0
+offset_bottom = -1009.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mmpqv")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_agw4h")
+
+[node name="desc" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -42.0
+offset_top = 74.0
+offset_right = 118.0
+offset_bottom = 190.0
+theme = ExtResource("2_g4xy8")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+fit_content = true
+
+[node name="active" type="Sprite2D" parent="."]
+modulate = Color(0.956863, 0.956863, 0, 1)
+position = Vector2(35, 34)
+scale = Vector2(3, 3)
+texture = ExtResource("4_74b58")
+hframes = 8
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_37axe")
+}
+
+[connection signal="mouse_entered" from="Icon" to="." method="_on_icon_mouse_entered"]
+[connection signal="mouse_exited" from="Icon" to="." method="_on_icon_mouse_exited"]

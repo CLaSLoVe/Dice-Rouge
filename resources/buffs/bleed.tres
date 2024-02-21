@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=3 format=3 uid="uid://bf1pegexcy4ti"]
+
+[ext_resource type="Texture2D" uid="uid://knvphc18irwa" path="res://Art/Picture/buff/skill_icons18.png" id="1_jlo8p"]
+[ext_resource type="Script" path="res://resources/buffs/buff.gd" id="2_puk4f"]
+
+[resource]
+script = ExtResource("2_puk4f")
+text = "流血"
+icon = ExtResource("1_jlo8p")
+on = 1

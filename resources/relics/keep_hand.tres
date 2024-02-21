@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Relic" load_steps=3 format=3 uid="uid://chw7on3aqmvy2"]
+
+[ext_resource type="Script" path="res://resources/relics/relic.gd" id="1_2u122"]
+[ext_resource type="Texture2D" uid="uid://bh5b1vxff2ycd" path="res://Art/Picture/Spells/divine_protection_spell.png" id="1_5p3rk"]
+
+[resource]
+script = ExtResource("1_2u122")
+text = "keep_hand"
+icon = ExtResource("1_5p3rk")
+data_array = Array[int]([])
+tooltip_text = "回合结束时将不会清空骰子"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=3 format=3 uid="uid://pjou5yux83sy"]
+
+[ext_resource type="Script" path="res://resources/buffs/buff.gd" id="1_6ih8o"]
+[ext_resource type="Texture2D" uid="uid://dppu3swb4gebn" path="res://Art/Picture/buff/skill_icons31.png" id="1_lympk"]
+
+[resource]
+script = ExtResource("1_6ih8o")
+text = "圣盾"
+icon = ExtResource("1_lympk")

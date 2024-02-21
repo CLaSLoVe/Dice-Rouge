@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2hkq5iwyxtso"]
+
+[ext_resource type="Script" path="res://battle/status.gd" id="1_8slue"]
+[ext_resource type="TileSet" uid="uid://5mf0hnugsaay" path="res://battle/Deck/battle.tres" id="2_a5lgi"]
+[ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="3_62qh0"]
+[ext_resource type="PackedScene" uid="uid://bvghhrsvx6km0" path="res://battle/init_var.tscn" id="4_j4rbl"]
+
+[node name="Status" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 25.0
+offset_top = -26.0
+offset_right = 65.0
+offset_bottom = 14.0
+script = ExtResource("1_8slue")
+
+[node name="Statusborder" type="TileMap" parent="."]
+position = Vector2(226, -190)
+scale = Vector2(2, 2)
+tile_set = ExtResource("2_a5lgi")
+format = 2
+layer_0/tile_data = PackedInt32Array(1835051, 1835008, 8, 2097195, 1835008, 11, 1835056, 2031616, 8, 2097200, 2031616, 11, 1835052, 1900544, 8, 1835053, 1900544, 8, 1835054, 1900544, 8, 1835055, 1900544, 8, 2097196, 1900544, 11, 2097197, 1900544, 11, 2097198, 1900544, 11, 2097199, 1900544, 11, 2031664, 2031616, 10, 1966128, 2031616, 10, 1900592, 2031616, 10, 1900587, 1835008, 10, 1966123, 1835008, 10, 2031659, 1835008, 10)
+
+[node name="Status" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1628.0
+offset_top = 721.0
+offset_right = 1768.0
+offset_bottom = 840.0
+theme_override_constants/separation = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Status"]
+layout_mode = 2
+theme = ExtResource("3_62qh0")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "当前属性值"
+fit_content = true
+
+[node name="VarBar" type="VBoxContainer" parent="Status"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="InitVar" parent="Status/VarBar" instance=ExtResource("4_j4rbl")]
+layout_mode = 2
+connection = 1
+
+[node name="InitVar2" parent="Status/VarBar" instance=ExtResource("4_j4rbl")]
+layout_mode = 2
+connection = 2
+
+[node name="InitVar3" parent="Status/VarBar" instance=ExtResource("4_j4rbl")]
+layout_mode = 2
+connection = 3

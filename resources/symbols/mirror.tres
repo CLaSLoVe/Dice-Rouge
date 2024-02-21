@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Symbol" load_steps=3 format=3 uid="uid://dx0t0v5usrbvw"]
+
+[ext_resource type="Texture2D" uid="uid://15gn4mpydygo" path="res://Art/Picture/symbols/mirror.png" id="1_tcbow"]
+[ext_resource type="Script" path="res://resources/symbols/symbol.gd" id="2_x5lsy"]
+
+[resource]
+script = ExtResource("2_x5lsy")
+type = 6
+icon = ExtResource("1_tcbow")
+tooltip_text = "复制左侧骰子"

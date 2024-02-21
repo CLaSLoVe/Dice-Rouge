@@ -1,0 +1,165 @@
+[gd_scene load_steps=15 format=3 uid="uid://cjenp1vm86670"]
+
+[ext_resource type="Script" path="res://battle/dice/dice_ui.gd" id="1_8b2gd"]
+[ext_resource type="Theme" uid="uid://bkpngwccxphhb" path="res://battle/dice/dice_ui.tres" id="1_hbbnq"]
+[ext_resource type="PackedScene" uid="uid://cgorapurkcu61" path="res://battle/dice/dice_mini_ui.tscn" id="2_c1gn8"]
+[ext_resource type="Resource" uid="uid://ciuwpcte5p6nx" path="res://resources/dices/base_dice.tres" id="2_x531x"]
+[ext_resource type="Script" path="res://battle/dice/dice_state_machine/dice_state_machine.gd" id="5_fk6hd"]
+[ext_resource type="Script" path="res://battle/dice/dice_state_machine/dice_base_state.gd" id="6_tb8ti"]
+[ext_resource type="Script" path="res://battle/dice/dice_state_machine/dice_dragging_state.gd" id="7_wv5mv"]
+[ext_resource type="Script" path="res://battle/dice/dice_state_machine/dice_released_state.gd" id="8_4khqo"]
+[ext_resource type="Texture2D" uid="uid://kflbpips8yds" path="res://Art/Picture/dice/burning/merged_image.png" id="9_cjavc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb753"]
+size = Vector2(100, 100)
+
+[sub_resource type="Animation" id="Animation_1rfmc"]
+resource_name = "start"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Burn/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_eh757"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Burn/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_v8prf"]
+resource_name = "loop"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Burn/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8l4ex"]
+_data = {
+"RESET": SubResource("Animation_eh757"),
+"loop": SubResource("Animation_v8prf"),
+"start": SubResource("Animation_1rfmc")
+}
+
+[node name="DiceUI" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1820.0
+offset_bottom = -980.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8b2gd")
+dice = ExtResource("2_x531x")
+id = null
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_hbbnq")
+
+[node name="DiceMiniUI" parent="." instance=ExtResource("2_c1gn8")]
+layout_mode = 1
+anchor_top = -0.66
+offset_right = 0.0
+offset_bottom = -66.0
+grow_vertical = 1
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="DropPointDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_bb753")
+
+[node name="DiceStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_fk6hd")
+initial_state = NodePath("DiceBaseState")
+
+[node name="DiceBaseState" type="Node" parent="DiceStateMachine"]
+script = ExtResource("6_tb8ti")
+
+[node name="DiceDraggingState" type="Node" parent="DiceStateMachine"]
+script = ExtResource("7_wv5mv")
+state = 2
+
+[node name="DiceReleasedState" type="Node" parent="DiceStateMachine"]
+script = ExtResource("8_4khqo")
+state = 3
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 101.0
+offset_right = 101.0
+offset_bottom = 124.0
+theme = ExtResource("1_hbbnq")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Burn" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Burn"]
+modulate = Color(1, 1, 1, 0.360784)
+position = Vector2(51, 30)
+scale = Vector2(4.35417, 4.35417)
+texture = ExtResource("9_cjavc")
+hframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Burn"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_8l4ex")
+}
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]
+[connection signal="mouse_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_mouse_entered"]
+[connection signal="mouse_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_mouse_exited"]

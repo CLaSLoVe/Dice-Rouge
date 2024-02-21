@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://b1hf3kkk7nng5"]
+
+[ext_resource type="AudioStream" uid="uid://7n7orqjpdxxr" path="res://Art/sfx/39_Block_03.wav" id="1_2hhvp"]
+[ext_resource type="Resource" uid="uid://ds1dy0l6l3j2b" path="res://resources/effects/single_attack.tres" id="1_6f6ym"]
+[ext_resource type="Script" path="res://resources/characters/character.gd" id="2_dlyqk"]
+[ext_resource type="Resource" uid="uid://brnva33xleyq7" path="res://resources/effects/block.tres" id="2_u2y7g"]
+[ext_resource type="Texture2D" uid="uid://isvg0dupbqua" path="res://Art/Picture/player/snow.png" id="3_umv4f"]
+
+[resource]
+script = ExtResource("2_dlyqk")
+char_name = "雪球"
+is_player = false
+alive = true
+size = 100
+icon = ExtResource("3_umv4f")
+selectable = true
+init_damage_per_turn = 0
+stun_immune = true
+mimic = true
+invincible_with_pal = false
+make_bleed = false
+make_poison = false
+enemy_skills = Array[Resource("res://resources/effects/effect.gd")]([ExtResource("1_6f6ym"), ExtResource("2_u2y7g")])
+p_array = Array[int]([7, 3])
+attack_audios = Array[AudioStreamWAV]([])
+block_audios = Array[AudioStreamWAV]([ExtResource("1_2hhvp")])
+enhance_audios = Array[AudioStreamWAV]([])
+heal_audios = Array[AudioStreamWAV]([])
+damage_audios = Array[AudioStreamWAV]([])
+hex_audios = Array[AudioStreamWAV]([])

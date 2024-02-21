@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=6 format=3 uid="uid://dxlwhbqe3esee"]
+
+[ext_resource type="Resource" uid="uid://bf1pegexcy4ti" path="res://resources/buffs/bleed.tres" id="1_lv4dx"]
+[ext_resource type="Texture2D" uid="uid://q2pj8jccrrbq" path="res://Art/Picture/symbols/spell.png" id="2_fie1w"]
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="3_886cr"]
+[ext_resource type="Resource" uid="uid://0ds4tfk4snhc" path="res://resources/symbols/enhance.tres" id="4_sp1py"]
+[ext_resource type="Resource" uid="uid://ccdti3nf7e31l" path="res://resources/symbols/attack.tres" id="5_8hkib"]
+
+[resource]
+script = ExtResource("3_886cr")
+text = "撕裂"
+type = 5
+tooltip = "行动时受到B点[color=orange]伤害[/color]持续&回合"
+icon = ExtResource("2_fie1w")
+base_target = 0
+base_statu = 0
+to_target = 1
+to_statu = 0
+times = 1
+magnitude = 0.0
+bias = 2
+countdown = 2
+on_turn = true
+buff = ExtResource("1_lv4dx")
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("4_sp1py"), ExtResource("5_8hkib")])

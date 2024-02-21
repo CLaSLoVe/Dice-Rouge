@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Relic" load_steps=3 format=3 uid="uid://c7isv7gq08im7"]
+
+[ext_resource type="Texture2D" uid="uid://bve6d4lsuvox2" path="res://Art/Picture/Spells/lightning_spell.png" id="1_ud1g4"]
+[ext_resource type="Script" path="res://resources/relics/relic.gd" id="2_dhs2f"]
+
+[resource]
+script = ExtResource("2_dhs2f")
+text = "angry"
+icon = ExtResource("1_ud1g4")
+data_array = Array[int]([20])
+tooltip_text = "受到[color=orange]伤害[/color]累计超过&点，获得[color=orange]普通强化[/color]，随后累计清零"

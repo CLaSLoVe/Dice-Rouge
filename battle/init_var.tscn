@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvghhrsvx6km0"]
+
+[ext_resource type="Theme" uid="uid://bkpngwccxphhb" path="res://battle/dice/dice_ui.tres" id="1_4b4xc"]
+[ext_resource type="Script" path="res://battle/init_var.gd" id="1_a4w5a"]
+
+[node name="InitVar" type="Control"]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1780.0
+offset_bottom = -1056.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a4w5a")
+
+[node name="content" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 89.0
+offset_bottom = 22.0
+
+[node name="label" type="RichTextLabel" parent="content"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme = ExtResource("1_4b4xc")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[color=yellow]力量"
+fit_content = true
+autowrap_mode = 0
+
+[node name="init_var" type="RichTextLabel" parent="content"]
+layout_mode = 2
+theme = ExtResource("1_4b4xc")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "6"
+fit_content = true
+autowrap_mode = 0
+
+[node name="add_" type="RichTextLabel" parent="content"]
+layout_mode = 2
+theme = ExtResource("1_4b4xc")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "+"
+fit_content = true
+autowrap_mode = 0
+
+[node name="add_var" type="RichTextLabel" parent="content"]
+layout_mode = 2
+theme = ExtResource("1_4b4xc")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "0"
+fit_content = true
+autowrap_mode = 0

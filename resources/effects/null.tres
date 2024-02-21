@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=3 format=3 uid="uid://bx34wlfcsjeud"]
+
+[ext_resource type="Texture2D" uid="uid://di8cafk0fjw46" path="res://Art/Picture/symbols/stun.png" id="1_wmy74"]
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="2_u085t"]
+
+[resource]
+script = ExtResource("2_u085t")
+text = "晕眩中..."
+type = 10
+tooltip = ""
+icon = ExtResource("1_wmy74")
+base_target = 0
+base_statu = 0
+to_target = 0
+to_statu = 0
+times = 1
+magnitude = 1.0
+bias = 0
+countdown = -1
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([])

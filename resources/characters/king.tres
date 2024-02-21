@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://paf0ww3ij2r1"]
+
+[ext_resource type="AudioStream" uid="uid://7n7orqjpdxxr" path="res://Art/sfx/39_Block_03.wav" id="1_8sjcn"]
+[ext_resource type="Resource" uid="uid://ds1dy0l6l3j2b" path="res://resources/effects/single_attack.tres" id="2_8m8aq"]
+[ext_resource type="Resource" uid="uid://brnva33xleyq7" path="res://resources/effects/block.tres" id="3_iuo41"]
+[ext_resource type="Texture2D" uid="uid://dm6ul8qdpiqe2" path="res://Art/Picture/player/king.png" id="4_koh13"]
+[ext_resource type="Script" path="res://resources/characters/character.gd" id="5_f7qu6"]
+
+[resource]
+script = ExtResource("5_f7qu6")
+char_name = "骷髅国王"
+is_player = false
+alive = true
+size = 200
+icon = ExtResource("4_koh13")
+selectable = true
+init_damage_per_turn = 0
+stun_immune = false
+mimic = false
+invincible_with_pal = true
+make_bleed = false
+make_poison = false
+enemy_skills = Array[Resource("res://resources/effects/effect.gd")]([ExtResource("2_8m8aq"), ExtResource("3_iuo41")])
+p_array = Array[int]([7, 3])
+attack_audios = Array[AudioStreamWAV]([null])
+block_audios = Array[AudioStreamWAV]([ExtResource("1_8sjcn")])
+enhance_audios = Array[AudioStreamWAV]([])
+heal_audios = Array[AudioStreamWAV]([])
+damage_audios = Array[AudioStreamWAV]([])
+hex_audios = Array[AudioStreamWAV]([])

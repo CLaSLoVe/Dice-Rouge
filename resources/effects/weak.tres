@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=6 format=3 uid="uid://b8ljgnkyveod3"]
+
+[ext_resource type="Resource" uid="uid://c7clyayxp8ror" path="res://resources/buffs/weak.tres" id="1_b7ho2"]
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="2_1tdnk"]
+[ext_resource type="Texture2D" uid="uid://q2pj8jccrrbq" path="res://Art/Picture/symbols/spell.png" id="2_yqhlt"]
+[ext_resource type="Resource" uid="uid://0ds4tfk4snhc" path="res://resources/symbols/enhance.tres" id="3_vry41"]
+[ext_resource type="Resource" uid="uid://ccdti3nf7e31l" path="res://resources/symbols/attack.tres" id="5_tqhao"]
+
+[resource]
+script = ExtResource("2_1tdnk")
+text = "比例弱化"
+type = 6
+tooltip = "[color=yellow]力量[/color]-M持续&回合"
+icon = ExtResource("2_yqhlt")
+base_target = 1
+base_statu = 4
+to_target = 1
+to_statu = 1
+times = 1
+magnitude = 0.6
+bias = 0
+countdown = 3
+on_turn = true
+buff = ExtResource("1_b7ho2")
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("3_vry41"), ExtResource("5_tqhao"), ExtResource("5_tqhao")])

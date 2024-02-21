@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=5 format=3 uid="uid://creofeojecxyd"]
+
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="1_s1s7r"]
+[ext_resource type="Resource" uid="uid://x7xnokxu4eom" path="res://resources/buffs/enhance.tres" id="1_xr2sq"]
+[ext_resource type="Resource" uid="uid://0ds4tfk4snhc" path="res://resources/symbols/enhance.tres" id="2_e1cc5"]
+[ext_resource type="Texture2D" uid="uid://bdmpm4foxgtci" path="res://Art/Picture/symbols/enhance.png" id="2_etd7l"]
+
+[resource]
+script = ExtResource("1_s1s7r")
+text = "普通强化"
+type = 3
+tooltip = "[color=yellow]力量[/color]+B持续&回合"
+icon = ExtResource("2_etd7l")
+base_target = 0
+base_statu = 4
+to_target = 0
+to_statu = 1
+times = 1
+magnitude = 0.0
+bias = 2
+countdown = 2
+on_turn = true
+buff = ExtResource("1_xr2sq")
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_e1cc5")])

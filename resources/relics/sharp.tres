@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Relic" load_steps=3 format=3 uid="uid://db4mpboprmqpu"]
+
+[ext_resource type="Texture2D" uid="uid://c07repcvd8f7k" path="res://Art/Picture/Spells/fire_spell.png" id="1_lkuyd"]
+[ext_resource type="Script" path="res://resources/relics/relic.gd" id="2_iwvjd"]
+
+[resource]
+script = ExtResource("2_iwvjd")
+text = "sharp"
+icon = ExtResource("1_lkuyd")
+data_array = Array[int]([2])
+tooltip_text = "[color=orange]初始力量[/color]-&，攻击附带[color=orange]撕裂[/color]"

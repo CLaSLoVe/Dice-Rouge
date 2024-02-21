@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Symbol" load_steps=3 format=3 uid="uid://ccdti3nf7e31l"]
+
+[ext_resource type="Texture2D" uid="uid://b5vhg15hrwryl" path="res://Art/Picture/symbols/attack.png" id="1_7hxsw"]
+[ext_resource type="Script" path="res://resources/symbols/symbol.gd" id="2_xs6qu"]
+
+[resource]
+script = ExtResource("2_xs6qu")
+type = 0
+icon = ExtResource("1_7hxsw")
+tooltip_text = "攻击"

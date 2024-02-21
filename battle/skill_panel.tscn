@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvvdj5x864uel"]
+
+[ext_resource type="Script" path="res://battle/skill_panel.gd" id="1_3wnlm"]
+[ext_resource type="Resource" uid="uid://ds1dy0l6l3j2b" path="res://resources/effects/single_attack.tres" id="2_y5hqx"]
+[ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="3_yesgf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8l3a5"]
+bg_color = Color(0.568627, 0.239216, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2, 0.121569, 0, 1)
+
+[sub_resource type="Theme" id="Theme_8jq35"]
+Panel/styles/panel = SubResource("StyleBoxFlat_8l3a5")
+
+[node name="SkillPanel" type="Control"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1620.0
+offset_bottom = -930.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_3wnlm")
+effect = ExtResource("2_y5hqx")
+
+[node name="ColorRect" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.74902)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_8jq35")
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 100.0
+offset_bottom = 95.0
+mouse_filter = 2
+theme = ExtResource("3_yesgf")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="Desc" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 7.0
+offset_right = 295.0
+offset_bottom = 84.0
+mouse_filter = 2
+theme = ExtResource("3_yesgf")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="Needs" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 96.0
+offset_right = 284.0
+offset_bottom = 146.0
+mouse_filter = 2
+alignment = 1
+
+[node name="t1" type="TextureRect" parent="Needs"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 2
+
+[node name="t2" type="TextureRect" parent="Needs"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 2
+
+[node name="t3" type="TextureRect" parent="Needs"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 2
+
+[node name="t4" type="TextureRect" parent="Needs"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 2
+
+[node name="t5" type="TextureRect" parent="Needs"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 2

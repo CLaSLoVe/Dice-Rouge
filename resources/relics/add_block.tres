@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Relic" load_steps=3 format=3 uid="uid://hvsk0n3taxv1"]
+
+[ext_resource type="Script" path="res://resources/relics/relic.gd" id="1_r8mod"]
+[ext_resource type="Texture2D" uid="uid://bsqlk8ofjf4ry" path="res://Art/Picture/Spells/ice_spell.png" id="1_v170l"]
+
+[resource]
+script = ExtResource("1_r8mod")
+text = "add_block"
+icon = ExtResource("1_v170l")
+data_array = Array[int]([3])
+tooltip_text = "[color=skyblue]格挡[/color]不会消失，每回合受到&点[color=orange]伤害[/color]"

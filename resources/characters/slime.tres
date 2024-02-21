@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://ci0wygkcrttx"]
+
+[ext_resource type="Resource" uid="uid://ds1dy0l6l3j2b" path="res://resources/effects/single_attack.tres" id="1_cu175"]
+[ext_resource type="AudioStream" uid="uid://7n7orqjpdxxr" path="res://Art/sfx/39_Block_03.wav" id="1_o4324"]
+[ext_resource type="Resource" uid="uid://brnva33xleyq7" path="res://resources/effects/block.tres" id="2_7i8pu"]
+[ext_resource type="Script" path="res://resources/characters/character.gd" id="2_kh7wg"]
+[ext_resource type="Texture2D" uid="uid://cs3ebkvpc7iou" path="res://Art/Picture/player/slime.png" id="3_e0d4l"]
+
+[resource]
+script = ExtResource("2_kh7wg")
+char_name = "史莱姆"
+is_player = false
+alive = true
+size = 100
+icon = ExtResource("3_e0d4l")
+selectable = true
+init_damage_per_turn = 0
+stun_immune = false
+mimic = false
+invincible_with_pal = false
+make_bleed = false
+make_poison = false
+enemy_skills = Array[Resource("res://resources/effects/effect.gd")]([ExtResource("1_cu175"), ExtResource("2_7i8pu")])
+p_array = Array[int]([7, 3])
+attack_audios = Array[AudioStreamWAV]([null])
+block_audios = Array[AudioStreamWAV]([ExtResource("1_o4324")])
+enhance_audios = Array[AudioStreamWAV]([])
+heal_audios = Array[AudioStreamWAV]([])
+damage_audios = Array[AudioStreamWAV]([])
+hex_audios = Array[AudioStreamWAV]([])

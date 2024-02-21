@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=3 format=3 uid="uid://c7clyayxp8ror"]
+
+[ext_resource type="Texture2D" uid="uid://d1xuuaih4isho" path="res://Art/Picture/buff/skill_icons26.png" id="1_dgapi"]
+[ext_resource type="Script" path="res://resources/buffs/buff.gd" id="2_dpyoi"]
+
+[resource]
+script = ExtResource("2_dpyoi")
+text = "弱化"
+icon = ExtResource("1_dgapi")

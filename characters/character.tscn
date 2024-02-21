@@ -1,0 +1,249 @@
+[gd_scene load_steps=12 format=3 uid="uid://dkqks7nl7flio"]
+
+[ext_resource type="Script" path="res://characters/enemy_base.gd" id="1_pfnfn"]
+[ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="2_auwwi"]
+[ext_resource type="Texture2D" uid="uid://clkf41s2ll2pj" path="res://Art/Picture/player/shadow.png" id="4_hnnrf"]
+[ext_resource type="Texture2D" uid="uid://bob4y6tydc2hw" path="res://Art/Picture/symbols/cross.png" id="5_stu80"]
+[ext_resource type="PackedScene" uid="uid://bvghhrsvx6km0" path="res://battle/init_var.tscn" id="5_ykrq6"]
+[ext_resource type="Theme" uid="uid://bkpngwccxphhb" path="res://battle/dice/dice_ui.tres" id="7_xhkps"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q21xl"]
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_sjghb"]
+Panel/styles/panel = SubResource("StyleBoxFlat_q21xl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adt8c"]
+bg_color = Color(0.4, 0.4, 0.4, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_580kp"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_tm28o"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_adt8c")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_580kp")
+
+[node name="Character" type="Control"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 5.0
+offset_bottom = -1.0
+theme = ExtResource("7_xhkps")
+script = ExtResource("1_pfnfn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -157.0
+offset_right = 239.0
+offset_bottom = 83.0
+grow_vertical = 0
+alignment = 2
+
+[node name="Features" type="PanelContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_auwwi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Features"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Features/HBoxContainer"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+
+[node name="labels" type="VBoxContainer" parent="VBoxContainer/Features/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="VBoxContainer/Features/HBoxContainer/labels"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "qqq"
+fit_content = true
+
+[node name="Character" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Character"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture = ExtResource("4_hnnrf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Bar" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Target" type="Sprite2D" parent="VBoxContainer/Bar"]
+unique_name_in_owner = true
+position = Vector2(27, -91)
+scale = Vector2(0.0703125, 0.0703125)
+texture = ExtResource("5_stu80")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Bar"]
+custom_minimum_size = Vector2(240, 30)
+layout_mode = 2
+offset_left = -3.0
+offset_top = 3.0
+offset_right = 256.0
+offset_bottom = 36.0
+theme = SubResource("Theme_sjghb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Bar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 10
+
+[node name="HealthBar" type="CenterContainer" parent="VBoxContainer/Bar/HBoxContainer"]
+layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="VBoxContainer/Bar/HBoxContainer/HealthBar"]
+custom_minimum_size = Vector2(210, 28)
+layout_mode = 2
+theme = SubResource("Theme_tm28o")
+max_value = 20.0
+step = 1.0
+value = 10.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="VBoxContainer/Bar/HBoxContainer/HealthBar"]
+layout_mode = 2
+tooltip_text = "血量"
+theme = ExtResource("2_auwwi")
+theme_override_font_sizes/font_size = 25
+text = "10/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BlockVar" type="Label" parent="VBoxContainer/Bar/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "格挡值"
+theme = ExtResource("2_auwwi")
+theme_override_font_sizes/font_size = 25
+text = "0"
+
+[node name="future" type="Label" parent="VBoxContainer/Bar"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 74.0
+offset_top = -37.0
+offset_right = 140.0
+offset_bottom = 17.0
+theme = ExtResource("2_auwwi")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+
+[node name="next" type="Control" parent="VBoxContainer/Bar"]
+anchors_preset = 0
+offset_left = -1.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = -2.0
+theme = ExtResource("7_xhkps")
+
+[node name="next_icon" type="Sprite2D" parent="VBoxContainer/Bar/next"]
+position = Vector2(31, 30)
+scale = Vector2(0.0644531, 0.0644531)
+
+[node name="attackvalue" type="Label" parent="VBoxContainer/Bar/next"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -12.0
+offset_right = 57.0
+offset_bottom = 23.0
+theme = ExtResource("2_auwwi")
+theme_override_colors/font_color = Color(0.8, 0.0627451, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 35
+
+[node name="Node2D" type="Node2D" parent="VBoxContainer/Bar"]
+position = Vector2(205, -100)
+
+[node name="Status" type="VBoxContainer" parent="VBoxContainer/Bar/Node2D"]
+unique_name_in_owner = true
+offset_left = -12.0
+offset_top = 14.0
+offset_right = 128.0
+offset_bottom = 94.0
+theme_override_constants/separation = 10
+
+[node name="InitVar" parent="VBoxContainer/Bar/Node2D/Status" instance=ExtResource("5_ykrq6")]
+layout_mode = 2
+connection = 1
+
+[node name="InitVar2" parent="VBoxContainer/Bar/Node2D/Status" instance=ExtResource("5_ykrq6")]
+layout_mode = 2
+connection = 2
+
+[node name="InitVar3" parent="VBoxContainer/Bar/Node2D/Status" instance=ExtResource("5_ykrq6")]
+layout_mode = 2
+connection = 3
+
+[node name="BuffContent" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BuffBar" type="HBoxContainer" parent="VBoxContainer/BuffContent"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 35)
+layout_mode = 2
+
+[node name="desc" type="RichTextLabel" parent="VBoxContainer/BuffContent"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme = ExtResource("2_auwwi")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0
+
+[node name="Node2D" type="Node2D" parent="VBoxContainer/BuffContent"]
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="main_sfx" type="AudioStreamPlayer2D" parent="SFX"]
+
+[node name="attack" type="AudioStreamPlayer2D" parent="SFX"]
+
+[node name="block" type="AudioStreamPlayer2D" parent="SFX"]
+
+[node name="heal" type="AudioStreamPlayer2D" parent="SFX"]
+
+[node name="enhance" type="AudioStreamPlayer2D" parent="SFX"]
+
+[node name="damage" type="AudioStreamPlayer2D" parent="SFX"]
+
+[node name="hex" type="AudioStreamPlayer2D" parent="SFX"]
+
+[connection signal="gui_input" from="VBoxContainer/Character/TextureRect" to="." method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="VBoxContainer/Character/TextureRect" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Character/TextureRect" to="." method="_on_mouse_exited"]

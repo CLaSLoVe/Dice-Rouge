@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bevwi7v5hfd1b"
+path="res://.godot/imported/damaged2.wav-58ea9312f462d67cc916f077d68d3f82.sample"
+
+[deps]
+
+source_file="res://Art/sfx/RPG Voice Starter Pack/Type 3/damaged2.wav"
+dest_files=["res://.godot/imported/damaged2.wav-58ea9312f462d67cc916f077d68d3f82.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

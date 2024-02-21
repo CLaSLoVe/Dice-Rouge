@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wu6jn3u3lx8u"
+path="res://.godot/imported/aqua.wav-a9be8c105fe16496f441e1e216ea3248.sample"
+
+[deps]
+
+source_file="res://Art/sfx/RPG Voice Starter Pack/Type 1/aqua.wav"
+dest_files=["res://.godot/imported/aqua.wav-a9be8c105fe16496f441e1e216ea3248.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

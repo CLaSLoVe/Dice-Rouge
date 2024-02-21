@@ -1,0 +1,188 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgorapurkcu61"]
+
+[ext_resource type="Script" path="res://battle/dice/dice_mini_ui.gd" id="1_tsid3"]
+[ext_resource type="StyleBox" uid="uid://b6ny6vn0fwpyt" path="res://battle/dice/dice_mini_style_box_flat_white.tres" id="2_lsdjx"]
+[ext_resource type="Theme" uid="uid://bkpngwccxphhb" path="res://battle/dice/dice_ui.tres" id="3_kgqbo"]
+[ext_resource type="FontFile" uid="uid://bwedq5hse3f8y" path="res://Art/IPix.ttf" id="3_svbju"]
+
+[sub_resource type="Theme" id="Theme_e3bxy"]
+Panel/styles/panel = ExtResource("2_lsdjx")
+
+[node name="DiceMiniUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 99.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tsid3")
+
+[node name="Panels" type="Node2D" parent="."]
+
+[node name="Panel1" type="Panel" parent="Panels"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_e3bxy")
+
+[node name="Panel2" type="Panel" parent="Panels"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_right = 66.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_e3bxy")
+
+[node name="Panel3" type="Panel" parent="Panels"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 66.0
+offset_right = 99.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_e3bxy")
+
+[node name="Panel4" type="Panel" parent="Panels"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 66.0
+offset_top = 33.0
+offset_right = 99.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_e3bxy")
+
+[node name="Panel5" type="Panel" parent="Panels"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 33.0
+offset_right = 66.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_e3bxy")
+
+[node name="Panel6" type="Panel" parent="Panels"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 33.0
+offset_right = 33.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_e3bxy")
+
+[node name="Label1" type="Label" parent="Panels"]
+offset_left = 1.0
+offset_right = 10.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_svbju")
+theme_override_font_sizes/font_size = 10
+text = "1"
+
+[node name="Label2" type="Label" parent="Panels"]
+offset_left = 34.0
+offset_right = 43.0
+offset_bottom = 15.0
+theme = ExtResource("3_kgqbo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_svbju")
+theme_override_font_sizes/font_size = 10
+text = "2"
+
+[node name="Label3" type="Label" parent="Panels"]
+offset_left = 67.0
+offset_right = 76.0
+offset_bottom = 15.0
+theme = ExtResource("3_kgqbo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_svbju")
+theme_override_font_sizes/font_size = 10
+text = "3"
+
+[node name="Label4" type="Label" parent="Panels"]
+offset_left = 68.0
+offset_top = 33.0
+offset_right = 77.0
+offset_bottom = 48.0
+theme = ExtResource("3_kgqbo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_svbju")
+theme_override_font_sizes/font_size = 10
+text = "4"
+
+[node name="Label5" type="Label" parent="Panels"]
+offset_left = 34.0
+offset_top = 33.0
+offset_right = 43.0
+offset_bottom = 48.0
+theme = ExtResource("3_kgqbo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_svbju")
+theme_override_font_sizes/font_size = 10
+text = "5"
+
+[node name="Label6" type="Label" parent="Panels"]
+offset_left = 1.0
+offset_top = 33.0
+offset_right = 10.0
+offset_bottom = 48.0
+theme = ExtResource("3_kgqbo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_svbju")
+theme_override_font_sizes/font_size = 10
+text = "6"
+
+[node name="Symbols" type="Node2D" parent="."]
+
+[node name="t1" type="TextureRect" parent="Symbols"]
+offset_right = 33.0
+offset_bottom = 33.0
+expand_mode = 1
+
+[node name="t2" type="TextureRect" parent="Symbols"]
+offset_left = 33.0
+offset_right = 66.0
+offset_bottom = 33.0
+expand_mode = 1
+
+[node name="t3" type="TextureRect" parent="Symbols"]
+offset_left = 66.0
+offset_right = 99.0
+offset_bottom = 33.0
+expand_mode = 1
+
+[node name="t4" type="TextureRect" parent="Symbols"]
+offset_left = 66.0
+offset_top = 33.0
+offset_right = 99.0
+offset_bottom = 66.0
+expand_mode = 1
+
+[node name="t5" type="TextureRect" parent="Symbols"]
+offset_left = 33.0
+offset_top = 33.0
+offset_right = 66.0
+offset_bottom = 66.0
+expand_mode = 1
+
+[node name="t6" type="TextureRect" parent="Symbols"]
+offset_top = 33.0
+offset_right = 33.0
+offset_bottom = 66.0
+expand_mode = 1

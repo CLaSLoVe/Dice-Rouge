@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Symbol" load_steps=3 format=3 uid="uid://ddmkr8g1i36ia"]
+
+[ext_resource type="Texture2D" uid="uid://2vij6kuo5ufx" path="res://Art/Picture/symbols/magic.png" id="1_vykvv"]
+[ext_resource type="Script" path="res://resources/symbols/symbol.gd" id="2_dhvs7"]
+
+[resource]
+script = ExtResource("2_dhvs7")
+type = 3
+icon = ExtResource("1_vykvv")
+tooltip_text = "立即法力+1"

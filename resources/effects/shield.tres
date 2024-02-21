@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=5 format=3 uid="uid://b6j4os32oddne"]
+
+[ext_resource type="Texture2D" uid="uid://q2pj8jccrrbq" path="res://Art/Picture/symbols/spell.png" id="1_c8pgn"]
+[ext_resource type="Resource" uid="uid://pjou5yux83sy" path="res://resources/buffs/shield.tres" id="1_li0nb"]
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="2_8lpwk"]
+[ext_resource type="Resource" uid="uid://b6qj7ufldsdgj" path="res://resources/symbols/block.tres" id="4_uqxa7"]
+
+[resource]
+script = ExtResource("2_8lpwk")
+text = "圣盾"
+type = 11
+tooltip = "获得&层圣盾"
+icon = ExtResource("1_c8pgn")
+base_target = 0
+base_statu = 0
+to_target = 0
+to_statu = 0
+times = 1
+magnitude = 1.0
+bias = 0
+countdown = 1
+on_turn = false
+buff = ExtResource("1_li0nb")
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("4_uqxa7"), ExtResource("4_uqxa7")])

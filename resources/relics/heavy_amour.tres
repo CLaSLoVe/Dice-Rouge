@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Relic" load_steps=3 format=3 uid="uid://co45nrdcnpugl"]
+
+[ext_resource type="Texture2D" uid="uid://cy5u2che8aaig" path="res://Art/Picture/Spells/counterspell.png" id="1_t2u3c"]
+[ext_resource type="Script" path="res://resources/relics/relic.gd" id="2_n33ra"]
+
+[resource]
+script = ExtResource("2_n33ra")
+text = "heavy_amour"
+icon = ExtResource("1_t2u3c")
+data_array = Array[int]([30, 4])
+tooltip_text = "受到[color=orange]伤害[/color]无法超过&，无法低于&"

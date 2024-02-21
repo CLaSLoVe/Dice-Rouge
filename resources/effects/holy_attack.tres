@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=4 format=3 uid="uid://blt0hetltcbox"]
+
+[ext_resource type="Texture2D" uid="uid://b5vhg15hrwryl" path="res://Art/Picture/symbols/attack.png" id="1_bt8n6"]
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="1_pr188"]
+[ext_resource type="Resource" uid="uid://ccdti3nf7e31l" path="res://resources/symbols/attack.tres" id="2_1xyhu"]
+
+[resource]
+script = ExtResource("1_pr188")
+text = "圣神攻击"
+type = 0
+tooltip = "造成[color=yellow]M初始力量[/color]?的伤害"
+icon = ExtResource("1_bt8n6")
+base_target = 0
+base_statu = 4
+to_target = 1
+to_statu = 0
+times = 1
+magnitude = 10.0
+bias = 0
+countdown = -1
+on_turn = true
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_1xyhu"), ExtResource("2_1xyhu"), ExtResource("2_1xyhu"), ExtResource("2_1xyhu"), ExtResource("2_1xyhu")])
