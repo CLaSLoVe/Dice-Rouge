@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://characters/enemy_base.gd" id="1_pfnfn"]
 [ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="2_auwwi"]
-[ext_resource type="Texture2D" uid="uid://clkf41s2ll2pj" path="res://Art/Picture/player/shadow.png" id="4_hnnrf"]
+[ext_resource type="Texture2D" uid="uid://v3xvml50xgfi" path="res://Art/Picture/player/dream.png" id="4_547ci"]
 [ext_resource type="Texture2D" uid="uid://bob4y6tydc2hw" path="res://Art/Picture/symbols/cross.png" id="5_stu80"]
 [ext_resource type="PackedScene" uid="uid://bvghhrsvx6km0" path="res://battle/init_var.tscn" id="5_ykrq6"]
 [ext_resource type="Theme" uid="uid://bkpngwccxphhb" path="res://battle/dice/dice_ui.tres" id="7_xhkps"]
@@ -92,7 +92,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Character"]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
-texture = ExtResource("4_hnnrf")
+texture = ExtResource("4_547ci")
 expand_mode = 2
 stretch_mode = 5
 
@@ -190,23 +190,23 @@ position = Vector2(205, -100)
 
 [node name="Status" type="VBoxContainer" parent="VBoxContainer/Bar/Node2D"]
 unique_name_in_owner = true
-offset_left = -12.0
-offset_top = 14.0
-offset_right = 128.0
-offset_bottom = 94.0
+z_index = 1
+offset_left = -16.0
+offset_top = 15.0
+offset_right = 124.0
+offset_bottom = 95.0
 theme_override_constants/separation = 10
 
 [node name="InitVar" parent="VBoxContainer/Bar/Node2D/Status" instance=ExtResource("5_ykrq6")]
 layout_mode = 2
-connection = 1
 
 [node name="InitVar2" parent="VBoxContainer/Bar/Node2D/Status" instance=ExtResource("5_ykrq6")]
 layout_mode = 2
-connection = 2
+connection = 1
 
 [node name="InitVar3" parent="VBoxContainer/Bar/Node2D/Status" instance=ExtResource("5_ykrq6")]
 layout_mode = 2
-connection = 3
+connection = 2
 
 [node name="BuffContent" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

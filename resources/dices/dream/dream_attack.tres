@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dice" load_steps=5 format=3 uid="uid://cqnp3bw50r2yl"]
+
+[ext_resource type="Script" path="res://resources/dices/dice.gd" id="1_3cjg2"]
+[ext_resource type="Resource" uid="uid://ccdti3nf7e31l" path="res://resources/symbols/attack.tres" id="2_ach87"]
+[ext_resource type="Resource" uid="uid://b6qj7ufldsdgj" path="res://resources/symbols/block.tres" id="3_h5sbs"]
+[ext_resource type="Resource" uid="uid://diqvaffp86f82" path="res://resources/symbols/heal.tres" id="4_v42lr"]
+
+[resource]
+script = ExtResource("1_3cjg2")
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_ach87"), ExtResource("2_ach87"), ExtResource("2_ach87"), ExtResource("4_v42lr"), ExtResource("3_h5sbs"), ExtResource("3_h5sbs")])

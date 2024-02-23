@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://6ovbhdln4rok"]
+
+[ext_resource type="Script" path="res://main/starter/dice.gd" id="1_eve0l"]
+[ext_resource type="PackedScene" uid="uid://cgorapurkcu61" path="res://battle/dice/dice_mini_ui.tscn" id="1_r1c3y"]
+
+[node name="Dice" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_eve0l")
+
+[node name="DiceMiniUI" parent="." instance=ExtResource("1_r1c3y")]
+offset_right = 0.0
+offset_bottom = 96.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(2, 2)

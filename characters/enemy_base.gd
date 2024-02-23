@@ -10,7 +10,7 @@ extends CharacterBase
 
 
 
-const NULL_action = preload("res://resources/effects/null.tres")
+const NULL_action = preload("res://resources/effects/onlyforenemies/null.tres")
 
 var next_action: Effect
 
@@ -22,6 +22,7 @@ func _after_ready():
 	if not selectable:
 		texture_rect.set("modulate", Color.TRANSPARENT)
 	Event.set_target.connect(_on_set_target)
+	add_to_group("enemies")
 	set_next_action()
 	#for skill in enemy_skills:
 		#f_label.text += skill.text+"\n"
@@ -49,6 +50,7 @@ var die_tween: Tween
 
 func _after_die():
 	Funcs.FUTURE.add_text("[color=Indianred]"+character.char_name+" 死亡[/color]")
+	
 	remove_from_group("enemies")
 	if Actions.selected_enemy == self:
 		Actions.selected_enemy = null
@@ -91,8 +93,6 @@ func play_sound(which, quiet):
 
 
 func _on_enemy_die(char):
-	if not activate:
-		return
 	if char == self:
 		return
 	if get_tree().get_nodes_in_group("enemies").size() == 1:
@@ -100,7 +100,8 @@ func _on_enemy_die(char):
 			selectable = true
 			select_tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
 			select_tween.tween_property(texture_rect, "modulate", Color.WHITE, 0.2)
-		set_target()
+		if alive:
+			set_target()
 	elif get_tree().get_nodes_in_group("enemies").size() > 1:
 		Funcs.select_from_enemy()
 

@@ -19,6 +19,7 @@ extends Control
 @onready var magic = $Magic
 @onready var burn = $Burn
 @onready var change = $Change
+@onready var mistake = $Mistake
 
 const BASE_PANEL_STYLE = preload("res://battle/dice/dice_state_machine/base_panel_style.tres")
 const HOVER_PANEL_STYLE = preload("res://battle/dice/dice_state_machine/hover_panel_style.tres")
@@ -39,7 +40,7 @@ var label_show_hide_tween: Tween
 var on_area: Area2D
 
 
-func _ready():
+func init():
 	dice_mini_ui.set("modulate", Color.TRANSPARENT)
 	burn.hide()
 	magic.hide()
@@ -65,6 +66,12 @@ func make_cur_symbol():
 	icon.texture = current_symbol.icon
 	self.tooltip_text = current_symbol.tooltip_text
 
+func make_temp_symbol(symbol):
+	current_symbol = symbol
+	icon.texture = symbol.icon
+	self.tooltip_text = symbol.tooltip_text
+
+
 func shuffle():
 	current_num = randi() % 6 + 1
 	make_cur_symbol()
@@ -72,6 +79,17 @@ func shuffle():
 func reverse():
 	current_num = 7 - current_num
 	make_cur_symbol()
+
+
+const MIRROR = preload("res://resources/symbols/mirror.tres")
+const ATTACK = preload("res://resources/symbols/attack.tres")
+func to_mirror():
+	current_symbol = MIRROR
+	make_temp_symbol(MIRROR)
+	
+func to_attack():
+	current_symbol = ATTACK
+	make_temp_symbol(ATTACK)
 
 func mini_ui_show_hide(is_show: bool):
 	mini_ui_show_hide_tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
@@ -107,6 +125,16 @@ func make_magic():
 	await animation_player.animation_finished
 	magic.hide()
 	is_draggable = true
+	
+	
+func make_mistake():
+	is_draggable = false
+	mistake.show()
+	Funcs.SFX.get_node("flesh").play()
+	animation_player.play("mistake")
+	await animation_player.animation_finished
+	mistake.hide()
+	is_draggable = true
 
 
 func make_change(method:String="shuffle"):
@@ -119,6 +147,10 @@ func make_change(method:String="shuffle"):
 		shuffle()
 	elif method == "reverse":
 		reverse()
+	elif method == 'mirror':
+		to_mirror()
+	elif method == 'attack':
+		to_attack()
 	animation_player.play("change2")
 	await animation_player.animation_finished
 	change.hide()

@@ -6,7 +6,7 @@ extends Control
 
 var cur_layer: int = 1
 var cur_round: int = 1
-var cur_money = 0
+var cur_money = 15
 
 @export var init_magic: int = 0
 @export var max_job: int = 1

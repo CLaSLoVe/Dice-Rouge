@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cjenp1vm86670"]
+[gd_scene load_steps=23 format=3 uid="uid://cjenp1vm86670"]
 
 [ext_resource type="Script" path="res://battle/dice/dice_ui.gd" id="1_8b2gd"]
 [ext_resource type="Theme" uid="uid://bkpngwccxphhb" path="res://battle/dice/dice_ui.tres" id="1_hbbnq"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://kflbpips8yds" path="res://Art/Picture/dice/burning/merged_image.png" id="9_cjavc"]
 [ext_resource type="Texture2D" uid="uid://lermberbshgl" path="res://Art/Picture/dice/exit/108.png" id="10_vbg3t"]
 [ext_resource type="Texture2D" uid="uid://b782i7nuwvfwd" path="res://Art/Picture/dice/change/117.png" id="12_0t5j2"]
+[ext_resource type="Texture2D" uid="uid://l1ppapkpqhii" path="res://Art/Picture/dice/hurt/121.png" id="13_02jhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb753"]
 size = Vector2(100, 100)
@@ -101,6 +102,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1.5625, 1.5625)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Mistake/Sprite2D:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_vftlr"]
@@ -228,6 +241,46 @@ tracks/3/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_la0t8"]
+resource_name = "mistake"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mistake/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_1rfmc"]
 resource_name = "start"
 length = 0.4
@@ -251,6 +304,7 @@ _data = {
 "change2": SubResource("Animation_oec3u"),
 "loop": SubResource("Animation_v8prf"),
 "magic": SubResource("Animation_m0pak"),
+"mistake": SubResource("Animation_la0t8"),
 "start": SubResource("Animation_1rfmc")
 }
 
@@ -358,6 +412,16 @@ visible = false
 position = Vector2(50, 49)
 scale = Vector2(1.5625, 1.5625)
 texture = ExtResource("12_0t5j2")
+hframes = 8
+vframes = 2
+
+[node name="Mistake" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Mistake"]
+position = Vector2(48, 51)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("13_02jhh")
 hframes = 8
 vframes = 2
 

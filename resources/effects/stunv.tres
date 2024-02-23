@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=5 format=3 uid="uid://bnabj3dr4rx2e"]
+
+[ext_resource type="Resource" uid="uid://c7clyayxp8ror" path="res://resources/buffs/weak.tres" id="1_i2ire"]
+[ext_resource type="Texture2D" uid="uid://q2pj8jccrrbq" path="res://Art/Picture/symbols/spell.png" id="2_aftjb"]
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="3_2j7fl"]
+[ext_resource type="Resource" uid="uid://b6qj7ufldsdgj" path="res://resources/symbols/block.tres" id="5_uu1jc"]
+
+[resource]
+script = ExtResource("3_2j7fl")
+text = "晕眩"
+type = 9
+tooltip = "无法[color=yellow]行动[/color]&回合"
+icon = ExtResource("2_aftjb")
+base_target = 0
+base_statu = 0
+to_target = 1
+to_statu = 0
+times = 1
+magnitude = 1.0
+bias = 0
+countdown = 1
+on_turn = true
+buff = ExtResource("1_i2ire")
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("5_uu1jc"), ExtResource("5_uu1jc")])

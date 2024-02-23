@@ -7,4 +7,4 @@
 script = ExtResource("2_gnx7c")
 type = 5
 icon = ExtResource("1_abgel")
-tooltip_text = "立即受到伤害"
+tooltip_text = "失误 立即受到伤害"

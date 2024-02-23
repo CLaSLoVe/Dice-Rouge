@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Dice" load_steps=5 format=3 uid="uid://ciuwpcte5p6nx"]
+[gd_resource type="Resource" script_class="Dice" load_steps=6 format=3 uid="uid://ciuwpcte5p6nx"]
 
 [ext_resource type="Script" path="res://resources/dices/dice.gd" id="1_q1j1u"]
 [ext_resource type="Resource" uid="uid://ccdti3nf7e31l" path="res://resources/symbols/attack.tres" id="2_elrup"]
 [ext_resource type="Resource" uid="uid://b6qj7ufldsdgj" path="res://resources/symbols/block.tres" id="3_12w7j"]
 [ext_resource type="Resource" uid="uid://diqvaffp86f82" path="res://resources/symbols/heal.tres" id="4_ncxkc"]
+[ext_resource type="Resource" uid="uid://dx0t0v5usrbvw" path="res://resources/symbols/mirror.tres" id="5_vth1r"]
 
 [resource]
 script = ExtResource("1_q1j1u")
-symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_elrup"), ExtResource("2_elrup"), ExtResource("3_12w7j"), ExtResource("2_elrup"), ExtResource("4_ncxkc"), ExtResource("3_12w7j")])
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("2_elrup"), ExtResource("2_elrup"), ExtResource("3_12w7j"), ExtResource("3_12w7j"), ExtResource("4_ncxkc"), ExtResource("5_vth1r")])

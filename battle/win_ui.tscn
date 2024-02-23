@@ -1,0 +1,277 @@
+[gd_scene load_steps=16 format=3 uid="uid://c1wkwrhsiirxh"]
+
+[ext_resource type="Script" path="res://battle/win_ui.gd" id="1_2wd3m"]
+[ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="1_6xwl0"]
+[ext_resource type="PackedScene" uid="uid://bvghhrsvx6km0" path="res://battle/init_var.tscn" id="2_62f8u"]
+[ext_resource type="Theme" uid="uid://fiymqiunkix6" path="res://battle/Deck/button.tres" id="4_vgynt"]
+[ext_resource type="PackedScene" uid="uid://dsc6grnm8eqjr" path="res://main/award.tscn" id="5_y2s5s"]
+[ext_resource type="Texture2D" uid="uid://cf7mgj13qva25" path="res://Art/Picture/Awards/stature.png" id="6_w0lla"]
+[ext_resource type="Texture2D" uid="uid://j5thvibyd22c" path="res://Art/Picture/Awards/bookstore.png" id="7_yrrv8"]
+[ext_resource type="Texture2D" uid="uid://bqrws8tmulico" path="res://Art/Picture/Awards/lab.png" id="8_80a2q"]
+[ext_resource type="Texture2D" uid="uid://m4xax6pxruww" path="res://Art/Picture/Awards/water.png" id="9_qgcud"]
+[ext_resource type="Texture2D" uid="uid://1tjle018eglb" path="res://Art/Picture/Awards/smith.png" id="10_23awm"]
+[ext_resource type="Texture2D" uid="uid://3rsfvdeea0tv" path="res://Art/Picture/Awards/nothing.png" id="11_jgeoo"]
+[ext_resource type="Script" path="res://main/win/relic.gd" id="12_mg83w"]
+[ext_resource type="PackedScene" uid="uid://cpelexqw0ekf0" path="res://main/win/relicbox.tscn" id="13_s11o0"]
+[ext_resource type="Script" path="res://main/win/book.gd" id="14_eairk"]
+[ext_resource type="PackedScene" uid="uid://dqrfc2scwj4d" path="res://main/win/skillbox.tscn" id="14_u1r15"]
+
+[node name="WinUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2wd3m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.0666667, 0.133333, 1)
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 56.0
+offset_right = 1431.0
+offset_bottom = 406.0
+theme = ExtResource("1_6xwl0")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "你通过了第1层...
+
+	你发现了..."
+
+[node name="Status" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 987.0
+offset_top = 54.0
+offset_right = 1127.0
+offset_bottom = 274.0
+theme_override_constants/separation = 30
+
+[node name="InitVar" parent="Status" instance=ExtResource("2_62f8u")]
+layout_mode = 2
+
+[node name="InitVar2" parent="Status" instance=ExtResource("2_62f8u")]
+layout_mode = 2
+connection = 1
+
+[node name="InitVar3" parent="Status" instance=ExtResource("2_62f8u")]
+layout_mode = 2
+connection = 2
+
+[node name="InitVar4" parent="Status" instance=ExtResource("2_62f8u")]
+layout_mode = 2
+connection = 3
+
+[node name="InitVar5" parent="Status" instance=ExtResource("2_62f8u")]
+layout_mode = 2
+connection = 4
+
+[node name="next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1616.0
+offset_top = 952.0
+offset_right = 1784.0
+offset_bottom = 1037.0
+theme = ExtResource("4_vgynt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="next"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 7.0
+offset_right = 149.0
+offset_bottom = 65.0
+mouse_filter = 2
+theme = ExtResource("1_6xwl0")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "跳 过"
+
+[node name="AwardsActive" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 362.0
+offset_right = 1745.0
+offset_bottom = 901.0
+
+[node name="AwardsInactive" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 1178.0
+offset_right = 3020.0
+offset_bottom = 1778.0
+
+[node name="Stature" parent="AwardsInactive" instance=ExtResource("5_y2s5s")]
+layout_mode = 2
+label = "relic"
+texture = ExtResource("6_w0lla")
+text = "[center]一座[color=yellow]雕像[/color]
+[获得一项[color=Orchid]圣遗物[/color]]"
+button_label = "祈祷"
+
+[node name="Book" parent="AwardsInactive" instance=ExtResource("5_y2s5s")]
+layout_mode = 2
+label = "book"
+texture = ExtResource("7_yrrv8")
+text = "[center]一个[color=yellow]书店[/color]
+[购买[color=Orchid]秘籍[/color]]"
+button_label = "进入"
+
+[node name="Lab" parent="AwardsInactive" instance=ExtResource("5_y2s5s")]
+layout_mode = 2
+label = "lab"
+texture = ExtResource("8_80a2q")
+text = "[center]一个[color=yellow]实验台[/color]
+[获得[color=Orchid]属性[/color]提升]"
+button_label = "实验"
+p = 0
+
+[node name="Water" parent="AwardsInactive" instance=ExtResource("5_y2s5s")]
+layout_mode = 2
+label = "water"
+texture = ExtResource("9_qgcud")
+text = "[center]一座[color=yellow]喷泉[/color]
+[恢复全部[color=Orchid]生命[/color]]"
+button_label = "饮用"
+
+[node name="Smith" parent="AwardsInactive" instance=ExtResource("5_y2s5s")]
+layout_mode = 2
+label = "smith"
+texture = ExtResource("10_23awm")
+text = "[center]一个[color=yellow]铁匠铺[/color]
+[修改[color=Orchid]骰子的面[/color]]"
+button_label = "进入"
+p = 0
+
+[node name="Nothing" parent="AwardsInactive" instance=ExtResource("5_y2s5s")]
+layout_mode = 2
+label = "null"
+texture = ExtResource("11_jgeoo")
+text = "[center]什么也[color=yellow]没有[/color]"
+button_label = "忽略"
+
+[node name="Curtain" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.0666667, 0.133333, 1)
+
+[node name="relic" type="Control" parent="Curtain"]
+visible = false
+anchors_preset = 0
+offset_left = 55.0
+offset_top = 83.0
+offset_right = 95.0
+offset_bottom = 123.0
+script = ExtResource("12_mg83w")
+
+[node name="relicselector" type="HBoxContainer" parent="Curtain/relic"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 110.0
+offset_right = 1765.0
+offset_bottom = 387.0
+theme_override_constants/separation = 200
+
+[node name="relicbox1" parent="Curtain/relic/relicselector" instance=ExtResource("13_s11o0")]
+layout_mode = 2
+
+[node name="relicbox2" parent="Curtain/relic/relicselector" instance=ExtResource("13_s11o0")]
+layout_mode = 2
+
+[node name="relicbox3" parent="Curtain/relic/relicselector" instance=ExtResource("13_s11o0")]
+layout_mode = 2
+
+[node name="water" type="Control" parent="Curtain"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Curtain/water"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 290.0
+offset_right = 1420.0
+offset_bottom = 536.0
+theme = ExtResource("1_6xwl0")
+theme_override_font_sizes/normal_font_size = 90
+bbcode_enabled = true
+text = "你已经恢复全部生命值"
+
+[node name="book" type="Control" parent="Curtain"]
+visible = false
+anchors_preset = 0
+offset_left = 177.0
+offset_top = 170.0
+offset_right = 217.0
+offset_bottom = 210.0
+script = ExtResource("14_eairk")
+
+[node name="skillselector" type="GridContainer" parent="Curtain/book" groups=["skills"]]
+layout_mode = 0
+offset_left = -151.0
+offset_top = -101.0
+offset_right = 1715.0
+offset_bottom = 472.0
+mouse_filter = 2
+theme_override_constants/h_separation = 170
+theme_override_constants/v_separation = 30
+columns = 4
+
+[node name="skillbox1" parent="Curtain/book/skillselector" instance=ExtResource("14_u1r15")]
+layout_mode = 2
+
+[node name="skillbox2" parent="Curtain/book/skillselector" instance=ExtResource("14_u1r15")]
+layout_mode = 2
+
+[node name="skillbox3" parent="Curtain/book/skillselector" instance=ExtResource("14_u1r15")]
+layout_mode = 2
+
+[node name="skillbox4" parent="Curtain/book/skillselector" instance=ExtResource("14_u1r15")]
+layout_mode = 2
+
+[node name="skillbox5" parent="Curtain/book/skillselector" instance=ExtResource("14_u1r15")]
+layout_mode = 2
+
+[node name="skillbox6" parent="Curtain/book/skillselector" instance=ExtResource("14_u1r15")]
+layout_mode = 2
+
+[node name="skillbox7" parent="Curtain/book/skillselector" instance=ExtResource("14_u1r15")]
+layout_mode = 2
+
+[node name="skillbox8" parent="Curtain/book/skillselector" instance=ExtResource("14_u1r15")]
+layout_mode = 2
+
+[node name="button" type="Button" parent="Curtain"]
+layout_mode = 0
+offset_left = 1616.0
+offset_top = 628.0
+offset_right = 1784.0
+offset_bottom = 713.0
+theme = ExtResource("4_vgynt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Curtain/button"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 7.0
+offset_right = 149.0
+offset_bottom = 65.0
+mouse_filter = 2
+theme = ExtResource("1_6xwl0")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "继 续"
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Curtain/button" to="." method="_on_next_pressed"]

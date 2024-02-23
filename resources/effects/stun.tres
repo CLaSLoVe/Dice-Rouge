@@ -22,4 +22,4 @@ bias = 0
 countdown = 1
 on_turn = true
 buff = ExtResource("1_jpakj")
-symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("4_c6auw"), ExtResource("4_0x42j")])
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("4_c6auw"), ExtResource("4_0x42j"), ExtResource("4_0x42j")])

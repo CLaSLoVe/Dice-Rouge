@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="Character" load_steps=19 format=3 uid="uid://bgkwcf5d0sw7u"]
+[gd_resource type="Resource" script_class="Character" load_steps=18 format=3 uid="uid://bgkwcf5d0sw7u"]
 
 [ext_resource type="Script" path="res://resources/characters/character.gd" id="1_7ymal"]
-[ext_resource type="Texture2D" uid="uid://colcicqk3fy0s" path="res://Art/Picture/player/girl.png" id="1_ceg1a"]
 [ext_resource type="AudioStream" uid="uid://3y4yirkvoytx" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack1.wav" id="1_x0df8"]
 [ext_resource type="AudioStream" uid="uid://c4aoyv8xr8fww" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack2.wav" id="2_khlnw"]
 [ext_resource type="AudioStream" uid="uid://dcf2skgbx6ljc" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack3.wav" id="3_7r6sv"]
@@ -25,7 +24,10 @@ char_name = "你"
 is_player = true
 alive = true
 size = 300
-icon = ExtResource("1_ceg1a")
+intro = ""
+dices = Array[Resource("res://resources/dices/dice.gd")]([])
+job_name = ""
+fly = false
 selectable = false
 init_damage_per_turn = 0
 stun_immune = false

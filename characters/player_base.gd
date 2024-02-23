@@ -66,5 +66,7 @@ func play_sound(which, quiet):
 
 func make_stun():
 	Funcs.HAND.lock_hand()
+	
+	
 func _after_calc_buff():
 	Event.attr_changed.emit()

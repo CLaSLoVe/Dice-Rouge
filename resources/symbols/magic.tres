@@ -7,4 +7,4 @@
 script = ExtResource("2_dhvs7")
 type = 3
 icon = ExtResource("1_vykvv")
-tooltip_text = "立即法力+1"
+tooltip_text = "法力 立即法力+1"

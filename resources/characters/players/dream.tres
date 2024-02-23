@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="Character" load_steps=23 format=3 uid="uid://c6mh6mcp7w832"]
+
+[ext_resource type="AudioStream" uid="uid://3y4yirkvoytx" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack1.wav" id="1_i8glv"]
+[ext_resource type="AudioStream" uid="uid://c4aoyv8xr8fww" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack2.wav" id="2_3clrn"]
+[ext_resource type="AudioStream" uid="uid://dcf2skgbx6ljc" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack3.wav" id="3_ohpja"]
+[ext_resource type="AudioStream" uid="uid://7n7orqjpdxxr" path="res://Art/sfx/39_Block_03.wav" id="4_hydnb"]
+[ext_resource type="AudioStream" uid="uid://cqm8lq4ttg1us" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged1.wav" id="5_6q821"]
+[ext_resource type="AudioStream" uid="uid://d2lbxjnk3pad3" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged2.wav" id="6_47itm"]
+[ext_resource type="AudioStream" uid="uid://dxcrgx5bj047y" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged3.wav" id="7_1d437"]
+[ext_resource type="Resource" uid="uid://ds1dy0l6l3j2b" path="res://resources/effects/single_attack.tres" id="8_7wu2u"]
+[ext_resource type="Resource" uid="uid://lhkyv1ocb45" path="res://resources/dices/dream/dream_magic.tres" id="8_t1ytn"]
+[ext_resource type="Resource" uid="uid://cqnp3bw50r2yl" path="res://resources/dices/dream/dream_attack.tres" id="9_o62a3"]
+[ext_resource type="Resource" uid="uid://brnva33xleyq7" path="res://resources/effects/block.tres" id="9_pansv"]
+[ext_resource type="AudioStream" uid="uid://ba73fy0dhfoj6" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump1.wav" id="10_6tcd6"]
+[ext_resource type="Resource" uid="uid://bdq33h7ffngkf" path="res://resources/dices/dream/dream_block.tres" id="10_fnluh"]
+[ext_resource type="Resource" uid="uid://cgb0q5qun66wx" path="res://resources/dices/dream/dream_heal_enhance.tres" id="11_3ultx"]
+[ext_resource type="AudioStream" uid="uid://cqat8h7fonm7c" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump2.wav" id="11_ajisd"]
+[ext_resource type="AudioStream" uid="uid://ceyffvh8y2qh3" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump3.wav" id="12_thah1"]
+[ext_resource type="AudioStream" uid="uid://biddoes5xoko" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed1.wav" id="13_1dbnp"]
+[ext_resource type="AudioStream" uid="uid://dmrwpob87ogo4" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed2.wav" id="14_fgmav"]
+[ext_resource type="AudioStream" uid="uid://b6nv8deg0v1yf" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed3.wav" id="15_uygtx"]
+[ext_resource type="AudioStream" uid="uid://cddimsrita5dh" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/hex.wav" id="16_b575u"]
+[ext_resource type="Script" path="res://resources/characters/character.gd" id="18_sna28"]
+[ext_resource type="Texture2D" uid="uid://v3xvml50xgfi" path="res://Art/Picture/player/dream.png" id="21_rf3rr"]
+
+[resource]
+script = ExtResource("18_sna28")
+char_name = "梦游少女"
+is_player = true
+alive = true
+size = 300
+icon = ExtResource("21_rf3rr")
+intro = "梦游中...好像不是很清醒的样子？"
+dices = Array[Resource("res://resources/dices/dice.gd")]([ExtResource("8_t1ytn"), ExtResource("9_o62a3"), ExtResource("10_fnluh"), ExtResource("10_fnluh"), ExtResource("11_3ultx")])
+job_name = "shuffle"
+fly = false
+selectable = false
+init_damage_per_turn = 0
+stun_immune = false
+mimic = false
+invincible_with_pal = false
+make_bleed = false
+make_poison = false
+enemy_skills = Array[Resource("res://resources/effects/effect.gd")]([ExtResource("8_7wu2u"), ExtResource("9_pansv")])
+p_array = Array[int]([7, 3])
+attack_audios = Array[AudioStreamWAV]([ExtResource("1_i8glv"), ExtResource("2_3clrn"), ExtResource("3_ohpja")])
+block_audios = Array[AudioStreamWAV]([ExtResource("4_hydnb")])
+enhance_audios = Array[AudioStreamWAV]([ExtResource("10_6tcd6"), ExtResource("11_ajisd"), ExtResource("12_thah1")])
+heal_audios = Array[AudioStreamWAV]([ExtResource("13_1dbnp"), ExtResource("14_fgmav"), ExtResource("15_uygtx")])
+damage_audios = Array[AudioStreamWAV]([ExtResource("5_6q821"), ExtResource("6_47itm"), ExtResource("7_1d437")])
+hex_audios = Array[AudioStreamWAV]([ExtResource("16_b575u")])

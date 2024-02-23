@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh4hm776ca42s"]
+
+[ext_resource type="Texture2D" uid="uid://co6yrme2igsnt" path="res://Art/Picture/player/warrior.png" id="1_5dcf4"]
+[ext_resource type="Script" path="res://main/starter/init_char.gd" id="1_c8qwf"]
+[ext_resource type="Resource" uid="uid://bgkwcf5d0sw7u" path="res://resources/characters/players/player.tres" id="2_fivlb"]
+[ext_resource type="PackedScene" uid="uid://bvghhrsvx6km0" path="res://battle/init_var.tscn" id="4_7odyp"]
+[ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="5_utpmu"]
+[ext_resource type="PackedScene" uid="uid://6ovbhdln4rok" path="res://main/starter/dice.tscn" id="6_lkfxy"]
+
+[node name="InitChar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_c8qwf")
+character = ExtResource("2_fivlb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_top = -1.0
+offset_right = 919.0
+offset_bottom = 871.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5dcf4")
+stretch_mode = 3
+
+[node name="Status" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 317.0
+offset_top = 37.0
+offset_right = 457.0
+offset_bottom = 192.0
+theme_override_constants/separation = 25
+
+[node name="InitVar" parent="Status" instance=ExtResource("4_7odyp")]
+layout_mode = 2
+
+[node name="InitVar2" parent="Status" instance=ExtResource("4_7odyp")]
+layout_mode = 2
+connection = 1
+
+[node name="InitVar3" parent="Status" instance=ExtResource("4_7odyp")]
+layout_mode = 2
+connection = 2
+
+[node name="InitVar4" parent="Status" instance=ExtResource("4_7odyp")]
+layout_mode = 2
+connection = 4
+
+[node name="Intro" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -47.0
+offset_top = 466.0
+offset_right = 417.0
+offset_bottom = 611.0
+theme = ExtResource("5_utpmu")
+theme_override_font_sizes/normal_font_size = 50
+
+[node name="job" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -519.0
+offset_top = 454.0
+offset_right = -180.0
+offset_bottom = 655.0
+theme = ExtResource("5_utpmu")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+fit_content = true
+
+[node name="Dices" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -413.0
+offset_top = 674.0
+offset_right = 1458.0
+offset_bottom = 955.0
+theme_override_constants/separation = 250
+
+[node name="Dice" parent="Dices" instance=ExtResource("6_lkfxy")]
+layout_mode = 2
+
+[node name="Dice2" parent="Dices" instance=ExtResource("6_lkfxy")]
+layout_mode = 2
+
+[node name="Dice3" parent="Dices" instance=ExtResource("6_lkfxy")]
+layout_mode = 2
+
+[node name="Dice4" parent="Dices" instance=ExtResource("6_lkfxy")]
+layout_mode = 2
+
+[node name="Dice5" parent="Dices" instance=ExtResource("6_lkfxy")]
+layout_mode = 2
+
+[node name="label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -255.0
+offset_top = 230.0
+offset_right = -70.0
+offset_bottom = 437.0
+theme = ExtResource("5_utpmu")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "一二三四"

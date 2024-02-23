@@ -13,6 +13,7 @@ func _ready():
 	Event.dice_to_job.connect(_on_dice_to_job)
 	reset()
 
+
 func _on_dice_to_job():
 	job_area.monitorable = false
 	if Funcs.COUNTER.cur_job <= 0:
@@ -20,7 +21,15 @@ func _on_dice_to_job():
 	
 	var dice_ui: DiceUI = job_box.get_child(0)
 	var ui_layer = get_tree().get_first_node_in_group("ui_layer")
-	await dice_ui.make_change("reverse")
+	match get_tree().get_first_node_in_group("player").character.job_name:
+		"flip":
+			await dice_ui.make_change("reverse")
+		"shuffle":
+			await dice_ui.make_change("shuffle")
+		"mirror":
+			await dice_ui.make_change("mirror")
+		"attack":
+			await dice_ui.make_change("attack")
 	dice_ui.reparent(ui_layer)
 	tween = get_tree().create_tween()
 	tween.tween_property(dice_ui, "position", Funcs.HAND.get_node("b"+str(dice_ui.id)).global_position, 0.05).set_trans(Tween.TRANS_CUBIC)

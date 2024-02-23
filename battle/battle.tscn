@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://cmavjgge2024e"]
+[gd_scene load_steps=96 format=3 uid="uid://cmavjgge2024e"]
 
 [ext_resource type="Script" path="res://battle/background.gd" id="1_7jxfr"]
 [ext_resource type="Script" path="res://battle/battle.gd" id="1_737yu"]
@@ -15,8 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://ba6omngs78rfm" path="res://Art/Picture/Background layers/Layer_0009_2.png" id="8_htuve"]
 [ext_resource type="AudioStream" uid="uid://deoyor64aom7f" path="res://Art/sfx/put_MI_SFX 24.wav" id="8_t8576"]
 [ext_resource type="Texture2D" uid="uid://br675s6d5r3nk" path="res://Art/Picture/Background layers/Layer_0008_3.png" id="9_3dv4v"]
-[ext_resource type="AudioStream" uid="uid://b7in77s5uljo7" path="res://Art/sfx/ci_MI_SFX 18.wav" id="9_wnsq0"]
-[ext_resource type="Resource" uid="uid://tmdwnotquxly" path="res://resources/dices/magic_dice.tres" id="10_mm7p2"]
 [ext_resource type="Texture2D" uid="uid://ddw48f8db571k" path="res://Art/Picture/Background layers/Layer_0007_Lights.png" id="10_ryy4q"]
 [ext_resource type="AudioStream" uid="uid://d0ond1xuaensw" path="res://Art/sfx/19231_Magazine_DIGIFX2-51.mp3" id="10_wo4s6"]
 [ext_resource type="Texture2D" uid="uid://boxbq67v4ib6s" path="res://Art/Picture/Background layers/Layer_0006_4.png" id="11_asb7v"]
@@ -35,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://dkqks7nl7flio" path="res://characters/character.tscn" id="16_tc5uc"]
 [ext_resource type="Texture2D" uid="uid://bc141y7kapoy6" path="res://Art/Picture/Background layers/Layer_0000_9.png" id="16_wymt6"]
 [ext_resource type="Texture2D" uid="uid://bdmk6o2ci0cxe" path="res://Art/Picture/ui/lock.png" id="19_wx685"]
+[ext_resource type="AudioStream" uid="uid://bto0icpo3myvn" path="res://Art/sfx/button2.mp3" id="21_mruex"]
 [ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="22_ui2mt"]
 [ext_resource type="PackedScene" uid="uid://ca58artum34qv" path="res://battle/dice/dice_box.tscn" id="24_1gr0s"]
 [ext_resource type="Script" path="res://battle/counter.gd" id="24_4e76u"]
@@ -51,19 +50,21 @@
 [ext_resource type="AudioStream" uid="uid://dchcayhq65urx" path="res://Art/sfx/dive.wav" id="30_yxpdt"]
 [ext_resource type="Resource" uid="uid://dq6xfl58i37on" path="res://resources/effects/heal.tres" id="31_0vj52"]
 [ext_resource type="AudioStream" uid="uid://b64v5701ri4w0" path="res://Art/sfx/46_Poison_01.wav" id="31_wt8up"]
-[ext_resource type="Resource" uid="uid://ci0wygkcrttx" path="res://resources/characters/slime.tres" id="32_2kcri"]
 [ext_resource type="AudioStream" uid="uid://5qgbibacnhfl" path="res://Art/sfx/22_Slash_04.wav" id="32_4p38s"]
 [ext_resource type="Resource" uid="uid://creofeojecxyd" path="res://resources/effects/enhance.tres" id="32_yge35"]
 [ext_resource type="AudioStream" uid="uid://qi3pq1h4dr2v" path="res://Art/sfx/21_orc_damage_2.wav" id="33_iq3qf"]
-[ext_resource type="Resource" uid="uid://b1hf3kkk7nng5" path="res://resources/characters/snow.tres" id="33_wi4n2"]
-[ext_resource type="Resource" uid="uid://g22mlodcht3w" path="res://resources/characters/bird.tres" id="33_xe4sg"]
-[ext_resource type="Resource" uid="uid://t4215d7r51p8" path="res://resources/characters/shadow.tres" id="34_4nsa8"]
-[ext_resource type="Resource" uid="uid://m4ax4ia14tnd" path="res://resources/characters/snack.tres" id="34_d86sl"]
+[ext_resource type="AudioStream" uid="uid://bpxa6dfkqyxrr" path="res://Art/sfx/01-laughter.wav" id="34_eo3qt"]
 [ext_resource type="Resource" uid="uid://b00birchuw2ix" path="res://resources/effects/triple_attack.tres" id="35_hjgvv"]
-[ext_resource type="Resource" uid="uid://bgkwcf5d0sw7u" path="res://resources/characters/player.tres" id="36_8jv6n"]
-[ext_resource type="Resource" uid="uid://paf0ww3ij2r1" path="res://resources/characters/king.tres" id="38_37b38"]
+[ext_resource type="AudioStream" uid="uid://g06nok7pn2pd" path="res://Art/sfx/77_flesh_02.wav" id="35_siya4"]
+[ext_resource type="Resource" uid="uid://bgkwcf5d0sw7u" path="res://resources/characters/players/player.tres" id="38_igxxl"]
+[ext_resource type="Resource" uid="uid://b1hf3kkk7nng5" path="res://resources/characters/enemies/snow.tres" id="39_smkg3"]
+[ext_resource type="Resource" uid="uid://m4ax4ia14tnd" path="res://resources/characters/enemies/snack.tres" id="40_lfh3d"]
 [ext_resource type="Script" path="res://battle/exist_characters.gd" id="40_p2w08"]
+[ext_resource type="Resource" uid="uid://t4215d7r51p8" path="res://resources/characters/enemies/shadow.tres" id="41_38qcl"]
+[ext_resource type="Resource" uid="uid://g22mlodcht3w" path="res://resources/characters/enemies/bird.tres" id="42_7ve35"]
+[ext_resource type="Resource" uid="uid://ci0wygkcrttx" path="res://resources/characters/enemies/slime.tres" id="43_2jncm"]
 [ext_resource type="Resource" uid="uid://bwkaqkc5y1pvt" path="res://resources/effects/aoe_attack.tres" id="43_ae60k"]
+[ext_resource type="Resource" uid="uid://paf0ww3ij2r1" path="res://resources/characters/enemies/king.tres" id="44_onlx3"]
 [ext_resource type="Resource" uid="uid://dopyxhpq3neo7" path="res://resources/effects/stun.tres" id="47_n381i"]
 [ext_resource type="Resource" uid="uid://b6j4os32oddne" path="res://resources/effects/shield.tres" id="47_smo5y"]
 [ext_resource type="Resource" uid="uid://d8hti1lnqghn" path="res://resources/dices/base_dice_2.tres" id="48_10gue"]
@@ -74,9 +75,15 @@
 [ext_resource type="Resource" uid="uid://c7isv7gq08im7" path="res://resources/relics/angry.tres" id="54_2f2f0"]
 [ext_resource type="Resource" uid="uid://co45nrdcnpugl" path="res://resources/relics/heavy_amour.tres" id="56_4liy5"]
 [ext_resource type="Resource" uid="uid://db4mpboprmqpu" path="res://resources/relics/sharp.tres" id="57_d0vcu"]
-[ext_resource type="Resource" uid="uid://dxlwhbqe3esee" path="res://resources/effects/bleed.tres" id="67_oneyv"]
+[ext_resource type="Resource" uid="uid://5s818wbe3835" path="res://resources/effects/mul_attack.tres" id="70_saat7"]
+[ext_resource type="Resource" uid="uid://dg1erpadwhih6" path="res://resources/effects/supershield.tres" id="74_2ktrw"]
+[ext_resource type="Resource" uid="uid://dgyiqti16mmty" path="res://resources/effects/single_attack_1.tres" id="75_5dkmt"]
 [ext_resource type="PackedScene" uid="uid://coigdkr8s3s7p" path="res://battle/relic.tscn" id="75_wsq0c"]
+[ext_resource type="Resource" uid="uid://lkdvls746ti" path="res://resources/effects/goodblock.tres" id="75_xjda4"]
+[ext_resource type="Resource" uid="uid://c1iw5enxkphwg" path="res://resources/effects/block1.tres" id="76_3ppst"]
 [ext_resource type="Resource" uid="uid://hvsk0n3taxv1" path="res://resources/relics/add_block.tres" id="76_06r4q"]
+[ext_resource type="Resource" uid="uid://bnabj3dr4rx2e" path="res://resources/effects/stunv.tres" id="77_a4xq8"]
+[ext_resource type="Resource" uid="uid://c2gkppo1u4bhe" path="res://resources/effects/enhance1.tres" id="77_iiybq"]
 [ext_resource type="Resource" uid="uid://chw7on3aqmvy2" path="res://resources/relics/keep_hand.tres" id="77_ux2iw"]
 [ext_resource type="Script" path="res://battle/future.gd" id="79_bpgpj"]
 
@@ -142,7 +149,7 @@ Button/styles/pressed = SubResource("StyleBoxTexture_oh3l0")
 [node name="Battle" type="Node2D" groups=["battle"]]
 script = ExtResource("1_737yu")
 
-[node name="Background" type="CanvasLayer" parent="."]
+[node name="Background" type="Node2D" parent="."]
 script = ExtResource("1_7jxfr")
 
 [node name="Background" type="TextureRect" parent="Background"]
@@ -303,7 +310,7 @@ stream = ExtResource("7_wqity")
 stream = ExtResource("8_t8576")
 
 [node name="button" type="AudioStreamPlayer2D" parent="SFX"]
-stream = ExtResource("9_wnsq0")
+stream = ExtResource("21_mruex")
 
 [node name="book" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("10_wo4s6")
@@ -342,43 +349,44 @@ stream = ExtResource("32_4p38s")
 [node name="orc_damage" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("33_iq3qf")
 
-[node name="Characters" type="CanvasLayer" parent="." groups=["active_characters"]]
+[node name="laugh" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("34_eo3qt")
+volume_db = 8.824
+
+[node name="flesh" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("35_siya4")
+
+[node name="Characters" type="Node2D" parent="." groups=["active_characters"]]
 script = ExtResource("40_p2w08")
 
-[node name="Player" parent="Characters" instance=ExtResource("16_tc5uc")]
-offset_left = 75.0
-offset_top = 558.0
-offset_right = 75.0
-offset_bottom = 558.0
+[node name="Player" parent="Characters" groups=["player"] instance=ExtResource("16_tc5uc")]
+offset_left = 77.0
+offset_top = 569.0
+offset_right = 377.0
+offset_bottom = 569.0
 script = ExtResource("24_bdn2t")
-character = ExtResource("36_8jv6n")
-max_health = 50
+character = ExtResource("38_igxxl")
+init_strenth = 99
 
 [node name="Enemies" type="HBoxContainer" parent="Characters"]
 custom_minimum_size = Vector2(900, 0)
 offset_left = 994.0
-offset_top = 521.0
+offset_top = 531.0
 offset_right = 1902.0
-offset_bottom = 561.0
+offset_bottom = 571.0
 alignment = 2
 
-[node name="Snow" parent="Characters/Enemies" instance=ExtResource("16_tc5uc")]
+[node name="e1" type="CenterContainer" parent="Characters/Enemies"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-character = ExtResource("33_wi4n2")
-init_strenth = 20
-init_defence = 10
-init_medical = 1
-max_health = 40
 
-[node name="Snack" parent="Characters/Enemies" instance=ExtResource("16_tc5uc")]
+[node name="e2" type="CenterContainer" parent="Characters/Enemies"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-character = ExtResource("34_d86sl")
-init_medical = 10
-max_health = 40
 
-[node name="Shadow" parent="Characters/Enemies" instance=ExtResource("16_tc5uc")]
+[node name="e3" type="CenterContainer" parent="Characters/Enemies"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-character = ExtResource("34_4nsa8")
 
 [node name="Enemies2" type="HBoxContainer" parent="Characters"]
 custom_minimum_size = Vector2(900, 0)
@@ -388,11 +396,17 @@ offset_right = 1898.0
 offset_bottom = 279.0
 alignment = 2
 
-[node name="Bird" parent="Characters/Enemies2" instance=ExtResource("16_tc5uc")]
+[node name="e1" type="CenterContainer" parent="Characters/Enemies2"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-character = ExtResource("33_xe4sg")
-init_strenth = 3
-max_health = 38
+
+[node name="e2" type="CenterContainer" parent="Characters/Enemies2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="e3" type="CenterContainer" parent="Characters/Enemies2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
 
 [node name="CharacterTemp" type="HBoxContainer" parent="Characters"]
 offset_left = 73.0
@@ -400,20 +414,44 @@ offset_top = -316.0
 offset_right = 1893.0
 offset_bottom = -276.0
 
+[node name="Snow" parent="Characters/CharacterTemp" instance=ExtResource("16_tc5uc")]
+layout_mode = 2
+character = ExtResource("39_smkg3")
+init_strenth = 20
+init_defence = 10
+init_medical = 1
+max_health = 40
+
+[node name="Snack" parent="Characters/CharacterTemp" instance=ExtResource("16_tc5uc")]
+layout_mode = 2
+character = ExtResource("40_lfh3d")
+init_medical = 10
+max_health = 40
+
+[node name="Shadow" parent="Characters/CharacterTemp" instance=ExtResource("16_tc5uc")]
+layout_mode = 2
+character = ExtResource("41_38qcl")
+
+[node name="Bird" parent="Characters/CharacterTemp" instance=ExtResource("16_tc5uc")]
+layout_mode = 2
+character = ExtResource("42_7ve35")
+init_strenth = 3
+max_health = 38
+
 [node name="Slime" parent="Characters/CharacterTemp" instance=ExtResource("16_tc5uc")]
 layout_mode = 2
-character = ExtResource("32_2kcri")
+character = ExtResource("43_2jncm")
 
 [node name="King" parent="Characters/CharacterTemp" instance=ExtResource("16_tc5uc")]
 layout_mode = 2
-character = ExtResource("38_37b38")
+character = ExtResource("44_onlx3")
 init_strenth = 15
 init_defence = 7
 init_medical = 7
 
-[node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+[node name="BattleUI" type="Node2D" parent="." groups=["ui_layer"]]
 
-[node name="DeckUI" type="CanvasLayer" parent="BattleUI"]
+[node name="DeckUI" type="Node2D" parent="BattleUI"]
 
 [node name="Deck" type="TileMap" parent="BattleUI/DeckUI"]
 position = Vector2(0, -23)
@@ -466,10 +504,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -351.0
-offset_top = -151.0
-offset_right = 349.0
-offset_bottom = -51.0
+offset_left = 610.0
+offset_top = 929.0
+offset_right = 1310.0
+offset_bottom = 1029.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 20
@@ -528,7 +566,6 @@ id = 5
 
 [node name="DiceUI6" parent="BattleUI/Trash" instance=ExtResource("7_focrj")]
 layout_mode = 2
-dice = ExtResource("10_mm7p2")
 id = 6
 
 [node name="Shot" type="Control" parent="BattleUI" groups=["shot"]]
@@ -601,18 +638,54 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="BattleUI/Job"]
+[node name="jobdesc" type="CenterContainer" parent="BattleUI/Job"]
 layout_mode = 0
-offset_left = 1402.0
+offset_left = 1418.0
 offset_top = 929.0
-offset_right = 1511.0
+offset_right = 1498.0
 offset_bottom = 989.0
+
+[node name="flip" type="RichTextLabel" parent="BattleUI/Job/jobdesc"]
+layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("12_58b6g")
 bbcode_enabled = true
 text = "[center]将骰子
 拖到[u]此处[/u]
 进行翻面"
+fit_content = true
+autowrap_mode = 0
+
+[node name="shuffle" type="RichTextLabel" parent="BattleUI/Job/jobdesc"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("12_58b6g")
+bbcode_enabled = true
+text = "[center]将骰子
+拖到[u]此处[/u]
+重新投掷"
+fit_content = true
+autowrap_mode = 0
+
+[node name="mirror" type="RichTextLabel" parent="BattleUI/Job/jobdesc"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("12_58b6g")
+bbcode_enabled = true
+text = "[center]将骰子
+拖到[u]此处[/u]
+变为镜像"
+fit_content = true
+autowrap_mode = 0
+
+[node name="attack" type="RichTextLabel" parent="BattleUI/Job/jobdesc"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("12_58b6g")
+bbcode_enabled = true
+text = "[center]将骰子
+拖到[u]此处[/u]
+变为攻击"
 fit_content = true
 autowrap_mode = 0
 
@@ -685,11 +758,16 @@ text = "第1层 第1回合"
 fit_content = true
 autowrap_mode = 0
 
-[node name="RelicsInactive" type="HBoxContainer" parent="BattleUI"]
+[node name="RelicsInactive" type="HBoxContainer" parent="BattleUI" groups=["inactive_relic"]]
+visible = false
 offset_left = 90.0
 offset_top = -153.0
 offset_right = 90.0
 offset_bottom = -82.0
+
+[node name="Relic3" parent="BattleUI/RelicsInactive" instance=ExtResource("75_wsq0c")]
+layout_mode = 2
+relic = ExtResource("53_74ffc")
 
 [node name="Relic" parent="BattleUI/RelicsInactive" instance=ExtResource("75_wsq0c")]
 layout_mode = 2
@@ -711,17 +789,14 @@ relic = ExtResource("56_4liy5")
 layout_mode = 2
 relic = ExtResource("57_d0vcu")
 
-[node name="Relics" type="HBoxContainer" parent="BattleUI"]
+[node name="Relics" type="HBoxContainer" parent="BattleUI" groups=["active_relic"]]
 offset_left = 87.0
 offset_top = 20.0
 offset_right = 1847.0
 offset_bottom = 91.0
 
-[node name="Relic3" parent="BattleUI/Relics" instance=ExtResource("75_wsq0c")]
-layout_mode = 2
-relic = ExtResource("53_74ffc")
-
 [node name="Tips" type="Control" parent="BattleUI"]
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -729,17 +804,76 @@ offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("25_jrtaj")
 
+[node name="TipsInactive" type="HBoxContainer" parent="BattleUI/Tips" groups=["inactive_skills"]]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 1335.0
+offset_right = 2478.0
+offset_bottom = 1485.0
+
+[node name="holyattack" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("30_3raxv")
+prize = 10
+
+[node name="mulattack" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("70_saat7")
+prize = 5
+
+[node name="weak" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("48_bobsf")
+prize = 18
+
+[node name="poison" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("49_spr35")
+
+[node name="stun" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("47_n381i")
+
+[node name="supershield" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("74_2ktrw")
+prize = 15
+
+[node name="goodblock" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("75_xjda4")
+
+[node name="shield" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("47_smo5y")
+
+[node name="stunv" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("77_a4xq8")
+prize = 45
+
+[node name="block1" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("76_3ppst")
+prize = 30
+
+[node name="attack1" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("75_5dkmt")
+prize = 30
+
+[node name="enhance1" parent="BattleUI/Tips/TipsInactive" instance=ExtResource("29_84yf2")]
+layout_mode = 2
+effect = ExtResource("77_iiybq")
+prize = 35
+
 [node name="TipPanel" type="Control" parent="BattleUI/Tips"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/Tips/TipPanel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="TileMap" type="TileMap" parent="BattleUI/Tips/TipPanel"]
 position = Vector2(10, 10)
@@ -778,37 +912,13 @@ layout_mode = 2
 effect = ExtResource("32_yge35")
 sellable = false
 
-[node name="holyattack" parent="BattleUI/Tips/TipPanel/GridContainer" instance=ExtResource("29_84yf2")]
-layout_mode = 2
-effect = ExtResource("30_3raxv")
-
-[node name="tripleattack" parent="BattleUI/Tips/TipPanel/GridContainer" instance=ExtResource("29_84yf2")]
-layout_mode = 2
-effect = ExtResource("35_hjgvv")
-
 [node name="aoeattack2" parent="BattleUI/Tips/TipPanel/GridContainer" instance=ExtResource("29_84yf2")]
 layout_mode = 2
 effect = ExtResource("43_ae60k")
 
-[node name="weak" parent="BattleUI/Tips/TipPanel/GridContainer" instance=ExtResource("29_84yf2")]
+[node name="tripleattack" parent="BattleUI/Tips/TipPanel/GridContainer" instance=ExtResource("29_84yf2")]
 layout_mode = 2
-effect = ExtResource("48_bobsf")
-
-[node name="poison" parent="BattleUI/Tips/TipPanel/GridContainer" instance=ExtResource("29_84yf2")]
-layout_mode = 2
-effect = ExtResource("49_spr35")
-
-[node name="stun" parent="BattleUI/Tips/TipPanel/GridContainer" instance=ExtResource("29_84yf2")]
-layout_mode = 2
-effect = ExtResource("47_n381i")
-
-[node name="shield" parent="BattleUI/Tips/TipPanel/GridContainer" instance=ExtResource("29_84yf2")]
-layout_mode = 2
-effect = ExtResource("47_smo5y")
-
-[node name="bleed" parent="BattleUI/Tips/TipPanel/GridContainer" instance=ExtResource("29_84yf2")]
-layout_mode = 2
-effect = ExtResource("67_oneyv")
+effect = ExtResource("35_hjgvv")
 
 [node name="Button" type="Button" parent="BattleUI/Tips"]
 layout_mode = 0
@@ -835,6 +945,7 @@ autowrap_mode = 0
 
 [node name="Curtain" type="ColorRect" parent="BattleUI"]
 visible = false
+z_index = 3
 offset_left = -71.0
 offset_top = 647.0
 offset_right = 1965.0

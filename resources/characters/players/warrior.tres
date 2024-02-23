@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="Character" load_steps=22 format=3 uid="uid://brtynhihqnu5d"]
+
+[ext_resource type="AudioStream" uid="uid://3y4yirkvoytx" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack1.wav" id="1_ssyqo"]
+[ext_resource type="AudioStream" uid="uid://c4aoyv8xr8fww" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack2.wav" id="2_sji3i"]
+[ext_resource type="AudioStream" uid="uid://dcf2skgbx6ljc" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack3.wav" id="3_t6lsk"]
+[ext_resource type="AudioStream" uid="uid://7n7orqjpdxxr" path="res://Art/sfx/39_Block_03.wav" id="4_i67jo"]
+[ext_resource type="AudioStream" uid="uid://cqm8lq4ttg1us" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged1.wav" id="5_nwuao"]
+[ext_resource type="AudioStream" uid="uid://d2lbxjnk3pad3" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged2.wav" id="6_8g3f1"]
+[ext_resource type="AudioStream" uid="uid://dxcrgx5bj047y" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged3.wav" id="7_rv6ct"]
+[ext_resource type="Resource" uid="uid://ds1dy0l6l3j2b" path="res://resources/effects/single_attack.tres" id="8_d0bny"]
+[ext_resource type="Resource" uid="uid://tmdwnotquxly" path="res://resources/dices/magic_dice.tres" id="8_ylfmi"]
+[ext_resource type="Resource" uid="uid://b5hs6nata32al" path="res://resources/dices/warrior/warrior-base.tres" id="9_1bvdl"]
+[ext_resource type="Resource" uid="uid://brnva33xleyq7" path="res://resources/effects/block.tres" id="9_arejk"]
+[ext_resource type="Resource" uid="uid://b6ssxpb3jwj87" path="res://resources/dices/warrior/warrior-base2.tres" id="10_6uhho"]
+[ext_resource type="AudioStream" uid="uid://ba73fy0dhfoj6" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump1.wav" id="10_ahl4j"]
+[ext_resource type="AudioStream" uid="uid://cqat8h7fonm7c" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump2.wav" id="11_rafm1"]
+[ext_resource type="AudioStream" uid="uid://ceyffvh8y2qh3" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump3.wav" id="12_3l4if"]
+[ext_resource type="AudioStream" uid="uid://biddoes5xoko" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed1.wav" id="13_c2oq1"]
+[ext_resource type="AudioStream" uid="uid://dmrwpob87ogo4" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed2.wav" id="14_w26nn"]
+[ext_resource type="AudioStream" uid="uid://b6nv8deg0v1yf" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed3.wav" id="15_dniw1"]
+[ext_resource type="AudioStream" uid="uid://cddimsrita5dh" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/hex.wav" id="16_d3aqo"]
+[ext_resource type="Texture2D" uid="uid://co6yrme2igsnt" path="res://Art/Picture/player/warrior.png" id="17_o7r6w"]
+[ext_resource type="Script" path="res://resources/characters/character.gd" id="18_smxpd"]
+
+[resource]
+script = ExtResource("18_smxpd")
+char_name = "武士"
+is_player = true
+alive = true
+size = 300
+icon = ExtResource("17_o7r6w")
+intro = "属性均衡，来一场堂堂正正的对决！"
+dices = Array[Resource("res://resources/dices/dice.gd")]([ExtResource("8_ylfmi"), ExtResource("9_1bvdl"), ExtResource("9_1bvdl"), ExtResource("10_6uhho"), ExtResource("10_6uhho")])
+job_name = "flip"
+fly = false
+selectable = false
+init_damage_per_turn = 0
+stun_immune = false
+mimic = false
+invincible_with_pal = false
+make_bleed = false
+make_poison = false
+enemy_skills = Array[Resource("res://resources/effects/effect.gd")]([ExtResource("8_d0bny"), ExtResource("9_arejk")])
+p_array = Array[int]([7, 3])
+attack_audios = Array[AudioStreamWAV]([ExtResource("1_ssyqo"), ExtResource("2_sji3i"), ExtResource("3_t6lsk")])
+block_audios = Array[AudioStreamWAV]([ExtResource("4_i67jo")])
+enhance_audios = Array[AudioStreamWAV]([ExtResource("10_ahl4j"), ExtResource("11_rafm1"), ExtResource("12_3l4if")])
+heal_audios = Array[AudioStreamWAV]([ExtResource("13_c2oq1"), ExtResource("14_w26nn"), ExtResource("15_dniw1")])
+damage_audios = Array[AudioStreamWAV]([ExtResource("5_nwuao"), ExtResource("6_8g3f1"), ExtResource("7_rv6ct")])
+hex_audios = Array[AudioStreamWAV]([ExtResource("16_d3aqo")])

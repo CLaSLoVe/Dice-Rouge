@@ -47,7 +47,6 @@ theme = ExtResource("1_4b4xc")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "+"
 fit_content = true
 autowrap_mode = 0
 
@@ -57,6 +56,5 @@ theme = ExtResource("1_4b4xc")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "0"
 fit_content = true
 autowrap_mode = 0

@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqrfc2scwj4d"]
+
+[ext_resource type="Script" path="res://main/win/skillbox.gd" id="1_l8vq5"]
+[ext_resource type="Theme" uid="uid://fiymqiunkix6" path="res://battle/Deck/button.tres" id="2_7366l"]
+[ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="3_c28ry"]
+[ext_resource type="Texture2D" uid="uid://wihd0okvo8wm" path="res://Art/Picture/Awards/7. Alert.png" id="4_ropng"]
+
+[node name="skillbox" type="VBoxContainer"]
+custom_minimum_size = Vector2(300, 250)
+script = ExtResource("1_l8vq5")
+
+[node name="cbox" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+
+[node name="box" type="Control" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="box"]
+layout_mode = 2
+offset_left = 97.0
+offset_top = 19.0
+offset_right = 199.0
+offset_bottom = 71.0
+theme = ExtResource("2_7366l")
+
+[node name="buttonlabel" type="RichTextLabel" parent="box/Button"]
+layout_mode = 2
+offset_left = 19.0
+offset_top = 4.0
+offset_right = 99.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme = ExtResource("3_c28ry")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "选 择"
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="box/Button"]
+visible = false
+layout_mode = 0
+offset_left = 127.0
+offset_top = -6.0
+offset_right = 210.0
+offset_bottom = 59.0
+mouse_filter = 2
+texture = ExtResource("4_ropng")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="box/Button/TextureRect"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = -154.0
+offset_right = 250.0
+offset_bottom = 62.0
+mouse_filter = 2
+theme = ExtResource("3_c28ry")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "替换"
+fit_content = true
+
+[connection signal="pressed" from="box/Button" to="." method="_on_button_pressed"]

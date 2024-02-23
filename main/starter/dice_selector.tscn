@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://b84rn68rbc8tb"]
+
+[ext_resource type="PackedScene" uid="uid://cgorapurkcu61" path="res://battle/dice/dice_mini_ui.tscn" id="1_oq4ty"]
+[ext_resource type="Script" path="res://main/starter/dice_selector.gd" id="1_t02g8"]
+[ext_resource type="Theme" uid="uid://fiymqiunkix6" path="res://battle/Deck/button.tres" id="2_lbmbw"]
+[ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="3_46y1a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nx71"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Theme" id="Theme_ux451"]
+Panel/styles/panel = SubResource("StyleBoxFlat_7nx71")
+
+[node name="DiceSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_t02g8")
+
+[node name="DiceMiniUI" parent="." instance=ExtResource("1_oq4ty")]
+scale = Vector2(2, 2)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 154.0
+offset_right = 160.0
+offset_bottom = 216.0
+theme = ExtResource("2_lbmbw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 126.0
+offset_bottom = 48.0
+mouse_filter = 2
+theme = ExtResource("3_46y1a")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "选 择"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 206.0
+offset_bottom = 140.0
+theme = SubResource("Theme_ux451")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

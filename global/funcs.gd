@@ -64,6 +64,17 @@ func rand_choice_with_p(array: Array[int]):
 		if cur <= p_array[i]:
 			return i
 
+func select_n_with_p(array, num, p):
+	if array.size() <=num:
+		return array
+	var res = []
+	for i in range(num):
+		var n = rand_choice_with_p(p)
+		res.append(array.pop_at(n))
+		p.pop_at(n)
+	return res
+
+
 
 func select_from_array(array:Array):
 	if array.size() == 1:
@@ -75,10 +86,12 @@ func select_from_array(array:Array):
 
 
 func select_from_enemy():
+	if Actions.selected_enemy and Actions.selected_enemy.alive:
+		return
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	var target_set = false
 	for enemy in enemies:
-		if enemy.character.selectable:
+		if enemy.character.selectable and enemy.alive:
 			enemy.set_target()
 			target_set = true
 			break

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=4 format=3 uid="uid://c1iw5enxkphwg"]
+
+[ext_resource type="Texture2D" uid="uid://cnt5e13ps4kim" path="res://Art/Picture/symbols/block.png" id="1_v231g"]
+[ext_resource type="Script" path="res://resources/effects/effect.gd" id="2_jodgr"]
+[ext_resource type="Resource" uid="uid://b6qj7ufldsdgj" path="res://resources/symbols/block.tres" id="3_tbmp5"]
+
+[resource]
+script = ExtResource("2_jodgr")
+text = "加强格挡"
+type = 1
+tooltip = "获得[color=skyblue]防御[/color]?+B的护盾"
+icon = ExtResource("1_v231g")
+base_target = 0
+base_statu = 2
+to_target = 0
+to_statu = 0
+times = 1
+magnitude = 1.0
+bias = 2
+countdown = -1
+on_turn = true
+symbols = Array[Resource("res://resources/symbols/symbol.gd")]([ExtResource("3_tbmp5")])

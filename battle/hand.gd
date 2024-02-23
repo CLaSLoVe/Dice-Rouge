@@ -27,16 +27,27 @@ func from_trash_to_hand():
 
 
 func do_instant_effect(dice_ui: DiceUI):
-	if dice_ui.current_symbol.type == Symbol.Type.MAGIC:
-		dice_ui.remove_from_group("active_dice")
-		dice_ui.add_to_group("inactive_dice")
-		await dice_ui.make_magic()
-		dice_ui.to_trash()
-		Funcs.COUNTER.cur_magic += 1
-
+	if not (dice_ui in get_tree().get_nodes_in_group("active_dice")):
+		return
+	match dice_ui.current_symbol.type:
+		Symbol.Type.MAGIC:
+			dice_ui.remove_from_group("active_dice")
+			dice_ui.add_to_group("inactive_dice")
+			await dice_ui.make_magic()
+			dice_ui.to_trash()
+			Funcs.COUNTER.cur_magic += 1
+			print("magic")
+		Symbol.Type.MISTAKE:
+			dice_ui.remove_from_group("active_dice")
+			dice_ui.add_to_group("inactive_dice")
+			await dice_ui.make_mistake()
+			dice_ui.to_trash()
+			get_tree().get_first_node_in_group("player").take_damage(3)
+			print("mistake")
 
 func lock_hand():
-	Funcs.FUTURE.add_text("你 受到了 晕眩")
+	var player = get_tree().get_first_node_in_group("player")
+	Funcs.FUTURE.add_text("[font_size=15]"+player.character.char_name+"被[color=gray]晕眩[/color][/font_size]")
 	var id_ind = Array(range(box_lock.size()))
 	id_ind.shuffle()
 	for i in id_ind:

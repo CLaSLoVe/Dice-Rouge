@@ -7,4 +7,4 @@
 script = ExtResource("2_x5lsy")
 type = 6
 icon = ExtResource("1_tcbow")
-tooltip_text = "复制左侧骰子"
+tooltip_text = "镜像 复制左侧骰子"

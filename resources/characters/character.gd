@@ -11,9 +11,19 @@ const BLOCK = preload("res://resources/effects/block.tres")
 @export_range(0, 300) var size: int = 100
 @export var icon: Texture
 
+@export_multiline var intro: String
+
+
+@export_group("for player")
+
+@export var dices: Array[Dice]
+
+@export var job_name:String
+
 
 @export_group("for enemy")
 
+@export var fly = false
 @export var selectable = true
 @export var init_damage_per_turn: int = 0
 

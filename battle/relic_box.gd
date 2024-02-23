@@ -7,6 +7,8 @@ extends Control
 
 @export var relic: Relic
 
+
+
 var heal_after_win = false
 
 var count_damage = false
@@ -93,6 +95,7 @@ func _on_after_win(layer):
 	if heal_after_win:
 		await play()
 		get_tree().get_first_node_in_group("player").heal(relic.data_array[0])
+	Event.attr_changed.emit()
 
 const ENHANCE = preload("res://resources/effects/enhance.tres")
 

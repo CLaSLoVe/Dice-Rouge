@@ -32,8 +32,17 @@ func _on_shot_act_pressed():
 	
 	await player.do_action(current_effect)
 	await player.take_shot_damage()
-	get_tree().get_first_node_in_group("battle").end_turn_button.disabled = false
-	for enemy in get_tree().get_nodes_in_group("enemies"):
+	await get_tree().create_timer(0.1).timeout
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	
+	var exist_alive_enemy = false
+	for enemy in enemies:
+		if enemy.alive:
+			exist_alive_enemy = true
+		print(enemy, enemy.alive)
+	if exist_alive_enemy:
+		get_tree().get_first_node_in_group("battle").end_turn_button.disabled = false
+	for enemy in enemies:
 		enemy.set_mimic()
 		
 	check_valid()
@@ -98,7 +107,7 @@ func make_predict():
 			var this_text = str(Actions.calc_value(current_effect, player.get_target(current_effect.base_target)[0]))
 			if current_effect.times >1:
 				this_text += ("x"+str(current_effect.times))
-			if target:
+			if target and target.alive:
 				target.set_future("-"+this_text)
 
 

@@ -24,9 +24,9 @@ extends Node
 
 const BUFF_ICON = preload("res://battle/buff_icon.tscn")
 const MI_SFX_27 = preload("res://Art/sfx/MI_SFX 27.wav")
-const BLEED = preload("res://resources/effects/bleed.tres")
+const BLEED = preload("res://resources/effects/onlyforenemies/bleed.tres")
 const POISON = preload("res://resources/effects/poison.tres")
-const POISON_1 = preload("res://resources/effects/poison_1.tres")
+const POISON_1 = preload("res://resources/effects/onlyforenemies/poison_1.tres")
 
 
 var add_strenth: int = 0
@@ -61,7 +61,7 @@ var min_take_damage = 0
 var its_turn = false
 
 
-func _ready():
+func init():
 	# data
 	#init_strenth = character.init_strenth
 	#init_defence = character.init_defence
@@ -72,14 +72,6 @@ func _ready():
 	stun_immune = character.stun_immune
 	selectable = character.selectable
 	init_damage_per_turn = character.init_damage_per_turn
-	
-	if character.is_player:
-		status.set("position:x", -220)
-	else:
-		status.set("position:x", -12)
-	for statu in status.get_children():
-		statu.character = self
-		statu.reset()
 	
 	# feature board
 	if character.is_player:
@@ -109,7 +101,14 @@ func _ready():
 	features_panel.set("modulate", Color.TRANSPARENT)
 	
 	# init
-	cur_health = max_health
+	if not cur_health:
+		cur_health = max_health
+	
+	for statu in status.get_children():
+		statu.font_size = 25
+		statu.set_character(self)
+		statu.reset()
+	
 	add_to_group("everyone")
 	_after_ready()
 	reset()	
@@ -139,7 +138,7 @@ func take_damage(value, quiet=false):
 		Funcs.SFX.get_node("invincible").play()
 		return
 	for child in buff_bar.get_children():
-		if child.effect.type == Effect.Type.SHIELD:
+		if child.effect.type == Effect.Type.SHIELD and child.countdown >= 1:
 			Funcs.SFX.get_node("invincible").play()
 			child.counting()
 			child.reset()
@@ -250,7 +249,7 @@ func calc_buff():
 	add_strenth = cur_strenth - init_strenth
 	add_defence = cur_defence - init_defence
 	add_medical = cur_medical - init_medical
-	
+	Event.attr_changed.emit()
 	_after_calc_buff()
 
 

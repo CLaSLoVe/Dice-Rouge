@@ -1,0 +1,262 @@
+[gd_scene load_steps=21 format=3 uid="uid://cpsnwkfrnngal"]
+
+[ext_resource type="PackedScene" uid="uid://cmavjgge2024e" path="res://battle/battle.tscn" id="1_ucw75"]
+[ext_resource type="Script" path="res://main/scene_manager.gd" id="1_ybrlu"]
+[ext_resource type="PackedScene" uid="uid://c1wkwrhsiirxh" path="res://battle/win_ui.tscn" id="2_3n34o"]
+[ext_resource type="Script" path="res://main/StartPage.gd" id="2_ugujs"]
+[ext_resource type="Theme" uid="uid://crwkjdaabkgbl" path="res://battle/rictext.tres" id="2_xwyvr"]
+[ext_resource type="PackedScene" uid="uid://dh4hm776ca42s" path="res://main/starter/init_char.tscn" id="3_t0l8d"]
+[ext_resource type="Resource" uid="uid://bi4uwdm3memdq" path="res://resources/characters/players/angel.tres" id="4_jxno2"]
+[ext_resource type="Resource" uid="uid://brtynhihqnu5d" path="res://resources/characters/players/warrior.tres" id="4_nuxnt"]
+[ext_resource type="Theme" uid="uid://fiymqiunkix6" path="res://battle/Deck/button.tres" id="5_dip3j"]
+[ext_resource type="Resource" uid="uid://c6mh6mcp7w832" path="res://resources/characters/players/dream.tres" id="6_wmd2u"]
+[ext_resource type="PackedScene" uid="uid://b84rn68rbc8tb" path="res://main/starter/dice_selector.tscn" id="10_li2pl"]
+[ext_resource type="Script" path="res://main/select_dice.gd" id="10_sy13e"]
+[ext_resource type="Resource" uid="uid://b5hs6nata32al" path="res://resources/dices/warrior/warrior-base.tres" id="11_43hqv"]
+[ext_resource type="Resource" uid="uid://b6ssxpb3jwj87" path="res://resources/dices/warrior/warrior-base2.tres" id="12_7dvof"]
+[ext_resource type="Resource" uid="uid://cqnp3bw50r2yl" path="res://resources/dices/dream/dream_attack.tres" id="13_h2cgg"]
+[ext_resource type="Resource" uid="uid://bdq33h7ffngkf" path="res://resources/dices/dream/dream_block.tres" id="14_fycuj"]
+[ext_resource type="Resource" uid="uid://cgb0q5qun66wx" path="res://resources/dices/dream/dream_heal_enhance.tres" id="15_4dvfe"]
+[ext_resource type="Resource" uid="uid://b01k4uculanj3" path="res://resources/dices/angel/angel-base.tres" id="16_v5i7e"]
+[ext_resource type="Resource" uid="uid://bwr6awgs41ff7" path="res://resources/dices/angel/angel-base3.tres" id="17_46s5b"]
+[ext_resource type="Resource" uid="uid://w34ko28n4xn2" path="res://resources/dices/angel/angel-base2.tres" id="18_j3a4e"]
+
+[node name="SceneManager" type="Control" groups=["manager"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ybrlu")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -30.0
+offset_right = -6.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.0666667, 0.133333, 1)
+
+[node name="Battle" parent="." instance=ExtResource("1_ucw75")]
+
+[node name="MainPage" type="Control" parent="."]
+z_index = 20
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartPage" type="Control" parent="."]
+z_index = 20
+anchors_preset = 0
+offset_right = 1934.0
+offset_bottom = 1091.0
+script = ExtResource("2_ugujs")
+players = Array[Resource("res://resources/characters/character.gd")]([ExtResource("4_nuxnt"), ExtResource("4_jxno2")])
+
+[node name="ColorRect" type="ColorRect" parent="StartPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -30.0
+offset_right = -6.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.0666667, 0.133333, 1)
+
+[node name="SelectChar" type="Control" parent="StartPage"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ready" type="HBoxContainer" parent="StartPage/SelectChar"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 1161.0
+offset_right = 48.0
+offset_bottom = 1201.0
+
+[node name="angel" parent="StartPage/SelectChar/Ready" instance=ExtResource("3_t0l8d")]
+layout_mode = 2
+character = ExtResource("4_jxno2")
+init_strenth = 8
+init_defence = 4
+init_medical = 5
+damage = 40
+max_health = 60
+
+[node name="dream" parent="StartPage/SelectChar/Ready" instance=ExtResource("3_t0l8d")]
+layout_mode = 2
+character = ExtResource("6_wmd2u")
+init_strenth = 12
+init_defence = 6
+max_health = 100
+
+[node name="showcase" type="CenterContainer" parent="StartPage/SelectChar"]
+layout_mode = 0
+offset_left = 729.0
+offset_top = 119.0
+offset_right = 769.0
+offset_bottom = 159.0
+
+[node name="warrior" parent="StartPage/SelectChar/showcase" instance=ExtResource("3_t0l8d")]
+layout_mode = 2
+character = ExtResource("4_nuxnt")
+init_strenth = 6
+init_defence = 6
+max_health = 60
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StartPage/SelectChar"]
+z_index = 1
+layout_mode = 0
+offset_left = 81.0
+offset_top = 66.0
+offset_right = 784.0
+offset_bottom = 336.0
+theme = ExtResource("2_xwyvr")
+theme_override_font_sizes/normal_font_size = 100
+text = "选择你的角色"
+
+[node name="next" type="Button" parent="StartPage/SelectChar"]
+layout_mode = 0
+offset_left = 1319.0
+offset_top = 631.0
+offset_right = 1488.0
+offset_bottom = 727.0
+theme = ExtResource("5_dip3j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StartPage/SelectChar/next"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 14.0
+offset_right = 164.0
+offset_bottom = 81.0
+mouse_filter = 2
+theme = ExtResource("2_xwyvr")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "下一个"
+
+[node name="last" type="Button" parent="StartPage/SelectChar"]
+layout_mode = 0
+offset_left = 1319.0
+offset_top = 448.0
+offset_right = 1488.0
+offset_bottom = 544.0
+theme = ExtResource("5_dip3j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StartPage/SelectChar/last"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 14.0
+offset_right = 164.0
+offset_bottom = 83.0
+mouse_filter = 2
+theme = ExtResource("2_xwyvr")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "上一个"
+
+[node name="SelectDice" type="Control" parent="StartPage"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_sy13e")
+custom_dices = Array[Resource("res://resources/dices/dice.gd")]([ExtResource("11_43hqv"), ExtResource("12_7dvof"), ExtResource("13_h2cgg"), ExtResource("14_fycuj"), ExtResource("15_4dvfe"), ExtResource("16_v5i7e"), ExtResource("17_46s5b"), ExtResource("18_j3a4e")])
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="StartPage/SelectDice"]
+z_index = 1
+layout_mode = 0
+offset_left = 81.0
+offset_top = 66.0
+offset_right = 1041.0
+offset_bottom = 193.0
+mouse_filter = 2
+theme = ExtResource("2_xwyvr")
+theme_override_font_sizes/normal_font_size = 100
+text = "选择一枚自定义骰子"
+fit_content = true
+
+[node name="GridContainer" type="GridContainer" parent="StartPage/SelectDice"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 281.0
+offset_right = 1505.0
+offset_bottom = 881.0
+mouse_filter = 2
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 300
+columns = 4
+
+[node name="DiceSelector" parent="StartPage/SelectDice/GridContainer" instance=ExtResource("10_li2pl")]
+layout_mode = 2
+
+[node name="DiceSelector2" parent="StartPage/SelectDice/GridContainer" instance=ExtResource("10_li2pl")]
+layout_mode = 2
+
+[node name="DiceSelector3" parent="StartPage/SelectDice/GridContainer" instance=ExtResource("10_li2pl")]
+layout_mode = 2
+
+[node name="DiceSelector4" parent="StartPage/SelectDice/GridContainer" instance=ExtResource("10_li2pl")]
+layout_mode = 2
+
+[node name="DiceSelector5" parent="StartPage/SelectDice/GridContainer" instance=ExtResource("10_li2pl")]
+layout_mode = 2
+
+[node name="DiceSelector6" parent="StartPage/SelectDice/GridContainer" instance=ExtResource("10_li2pl")]
+layout_mode = 2
+
+[node name="DiceSelector7" parent="StartPage/SelectDice/GridContainer" instance=ExtResource("10_li2pl")]
+layout_mode = 2
+
+[node name="DiceSelector8" parent="StartPage/SelectDice/GridContainer" instance=ExtResource("10_li2pl")]
+layout_mode = 2
+
+[node name="Curtain" type="ColorRect" parent="StartPage"]
+visible = false
+layout_mode = 0
+offset_left = -17.0
+offset_top = 28.0
+offset_right = 1931.0
+offset_bottom = 1091.0
+color = Color(0.0470588, 0.0666667, 0.133333, 1)
+
+[node name="confirm_char" type="Button" parent="StartPage"]
+layout_mode = 0
+offset_left = 1582.0
+offset_top = 842.0
+offset_right = 1752.0
+offset_bottom = 938.0
+theme = ExtResource("5_dip3j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StartPage/confirm_char"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 14.0
+offset_right = 241.0
+offset_bottom = 83.0
+mouse_filter = 2
+theme = ExtResource("2_xwyvr")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "确 定"
+fit_content = true
+
+[node name="WinUI" parent="." instance=ExtResource("2_3n34o")]
+visible = false
+z_index = 20
+layout_mode = 1
+
+[connection signal="pressed" from="StartPage/SelectChar/next" to="StartPage" method="_on_button_pressed"]
+[connection signal="pressed" from="StartPage/SelectChar/last" to="StartPage" method="_on_last_pressed"]
+[connection signal="pressed" from="StartPage/confirm_char" to="." method="_on_confirm_char_pressed"]
+[connection signal="pressed" from="StartPage/confirm_char" to="StartPage" method="_on_confirm_char_pressed"]

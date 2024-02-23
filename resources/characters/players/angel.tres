@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="Character" load_steps=22 format=3 uid="uid://bi4uwdm3memdq"]
+
+[ext_resource type="AudioStream" uid="uid://3y4yirkvoytx" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack1.wav" id="1_0dt24"]
+[ext_resource type="AudioStream" uid="uid://c4aoyv8xr8fww" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack2.wav" id="2_g0dqa"]
+[ext_resource type="AudioStream" uid="uid://dcf2skgbx6ljc" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/attack3.wav" id="3_2puhu"]
+[ext_resource type="AudioStream" uid="uid://7n7orqjpdxxr" path="res://Art/sfx/39_Block_03.wav" id="4_25kle"]
+[ext_resource type="AudioStream" uid="uid://cqm8lq4ttg1us" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged1.wav" id="5_cipsq"]
+[ext_resource type="AudioStream" uid="uid://d2lbxjnk3pad3" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged2.wav" id="6_pyw6r"]
+[ext_resource type="AudioStream" uid="uid://dxcrgx5bj047y" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/damaged3.wav" id="7_0fvaf"]
+[ext_resource type="Resource" uid="uid://tmdwnotquxly" path="res://resources/dices/magic_dice.tres" id="8_p0l6a"]
+[ext_resource type="Resource" uid="uid://b01k4uculanj3" path="res://resources/dices/angel/angel-base.tres" id="9_g5key"]
+[ext_resource type="Resource" uid="uid://bwr6awgs41ff7" path="res://resources/dices/angel/angel-base3.tres" id="10_ud2i2"]
+[ext_resource type="Resource" uid="uid://ds1dy0l6l3j2b" path="res://resources/effects/single_attack.tres" id="12_m3wxh"]
+[ext_resource type="Resource" uid="uid://brnva33xleyq7" path="res://resources/effects/block.tres" id="13_ylyqf"]
+[ext_resource type="AudioStream" uid="uid://ba73fy0dhfoj6" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump1.wav" id="14_odr4t"]
+[ext_resource type="AudioStream" uid="uid://cqat8h7fonm7c" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump2.wav" id="15_whkdy"]
+[ext_resource type="AudioStream" uid="uid://ceyffvh8y2qh3" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/jump3.wav" id="16_s8xnd"]
+[ext_resource type="AudioStream" uid="uid://biddoes5xoko" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed1.wav" id="17_t5sln"]
+[ext_resource type="AudioStream" uid="uid://dmrwpob87ogo4" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed2.wav" id="18_10tog"]
+[ext_resource type="AudioStream" uid="uid://b6nv8deg0v1yf" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/healed3.wav" id="19_eml0m"]
+[ext_resource type="AudioStream" uid="uid://cddimsrita5dh" path="res://Art/sfx/RPG Voice Starter Pack/Type 1/hex.wav" id="20_8fi64"]
+[ext_resource type="Texture2D" uid="uid://bninldomoicub" path="res://Art/Picture/player/angel.png" id="21_l1elx"]
+[ext_resource type="Script" path="res://resources/characters/character.gd" id="22_0wrgf"]
+
+[resource]
+script = ExtResource("22_0wrgf")
+char_name = "天使"
+is_player = true
+alive = true
+size = 300
+icon = ExtResource("21_l1elx")
+intro = "受伤的天使，用神圣力量物理感化敌人！"
+dices = Array[Resource("res://resources/dices/dice.gd")]([ExtResource("8_p0l6a"), ExtResource("9_g5key"), ExtResource("10_ud2i2"), ExtResource("10_ud2i2"), ExtResource("10_ud2i2")])
+job_name = "attack"
+fly = false
+selectable = false
+init_damage_per_turn = 0
+stun_immune = false
+mimic = false
+invincible_with_pal = false
+make_bleed = false
+make_poison = false
+enemy_skills = Array[Resource("res://resources/effects/effect.gd")]([ExtResource("12_m3wxh"), ExtResource("13_ylyqf")])
+p_array = Array[int]([7, 3])
+attack_audios = Array[AudioStreamWAV]([ExtResource("1_0dt24"), ExtResource("2_g0dqa"), ExtResource("3_2puhu")])
+block_audios = Array[AudioStreamWAV]([ExtResource("4_25kle")])
+enhance_audios = Array[AudioStreamWAV]([ExtResource("14_odr4t"), ExtResource("15_whkdy"), ExtResource("16_s8xnd")])
+heal_audios = Array[AudioStreamWAV]([ExtResource("17_t5sln"), ExtResource("18_10tog"), ExtResource("19_eml0m")])
+damage_audios = Array[AudioStreamWAV]([ExtResource("5_cipsq"), ExtResource("6_pyw6r"), ExtResource("7_0fvaf")])
+hex_audios = Array[AudioStreamWAV]([ExtResource("20_8fi64")])
